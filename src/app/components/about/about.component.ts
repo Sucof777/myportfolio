@@ -14,7 +14,7 @@ interface AboutData {
   standalone: true, // ako koristiš standalone pristup
   imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './about.component.html',
-  styleUrls: ['./about.component.css']
+  styleUrls: ['./about.component.css'],
 })
 export class AboutComponent {
   about: AboutData = {
@@ -26,7 +26,7 @@ export class AboutComponent {
       `My journey in web development began several years ago, and since then, I have worked on various projects that challenged me to think creatively and improve my coding practices. I am a strong advocate for clean code, modular architecture, and designing interfaces that are intuitive for users.`,
       `Beyond coding, I enjoy learning about UI/UX design principles, exploring cloud technologies, and understanding the latest trends in the web development ecosystem. My goal is to create applications that not only function well but also provide an enjoyable experience for the end user.`,
       `In my free time, I like to contribute to open-source projects, write technical articles, and collaborate with other developers to exchange knowledge. I believe that continuous learning and curiosity are key to growing as a developer.`,
-      `I am motivated by challenges and love seeing a project come to life from idea to deployment. Building scalable and maintainable solutions, experimenting with new frameworks, and optimizing performance are aspects of development that excite me the most.`
-    ]
-  }
+      `I am motivated by challenges and love seeing a project come to life from idea to deployment. Building scalable and maintainable solutions, experimenting with new frameworks, and optimizing performance are aspects of development that excite me the most.`,
+    ],
+  };
 }
