@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { ProjectCardComponent } from '../project-card/project-card.component'; // putanja do tvoje komponente
 import { CommonModule } from '@angular/common'; // obavezno za *ngFor i ostalo
+import { ProjectCardComponent } from '../project-card/project-card.component';
 
 @Component({
   selector: 'app-portfolio-list',
@@ -17,6 +17,8 @@ export class PortfolioListComponent {
         'Web aplikacija za preporuku automobila bazirana na TypeScript, Angular i Node.js.',
       image: 'images/HomePage.png',
       link: 'https://frontend-l1sz-kfskjm73k-sucof777s-projects.vercel.app/',
+      sourceCode: 'https://github.com/Sucof777/frontend',
+      more: '#',
     },
     {
       title: 'Weather App',
@@ -24,12 +26,16 @@ export class PortfolioListComponent {
         'Weather App je moderna web aplikacija razvijena u Angularu koja omogućava korisnicima da brzo i jednostavno provjere vremensku prognozu za svoj grad',
       image: 'images/whomepage.png',
       link: 'https://weather-app-wheat-xi-38.vercel.app/weather',
+      sourceCode: 'https://github.com/Sucof777/weather-app',
+      more: '#',
     },
     {
       title: 'Projekat 3',
       description: 'Opis projekta 3',
       image: 'https://via.placeholder.com/300',
       link: '#',
+      sourceCode: '#',
+      more: '#',
     },
   ];
 }

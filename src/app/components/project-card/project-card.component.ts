@@ -6,11 +6,13 @@ import { Component, Input } from '@angular/core';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './project-card.component.html',
-  styleUrls: ['./project-card.component.css']
+  styleUrls: ['./project-card.component.css'],
 })
 export class ProjectCardComponent {
   @Input() title!: string;
   @Input() description!: string;
   @Input() image!: string;
   @Input() link!: string;
+  @Input() sourceCode!: string;
+  @Input() more!: string;
 }

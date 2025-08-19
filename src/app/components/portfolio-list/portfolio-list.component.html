@@ -1,9 +1,22 @@
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
-  <app-project-card 
+<div class="text-center py-10">
+  <h1 class="text-4xl font-extrabold text-black dark:text-white mb-4">
+    Dobrodošli u moj portfolio 🚀
+  </h1>
+  <p class="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
+    Ovdje možete pogledati neke od projekata koje sam razvijao tokom rada i
+    učenja web developmenta. Svaki projekat ima svoj opis, live demo i link ka
+    izvoru koda.
+  </p>
+</div>
+
+<div class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 gap-6 p-6">
+  <app-project-card
     *ngFor="let project of projects"
     [title]="project.title"
     [description]="project.description"
     [image]="project.image"
-    [link]="project.link">
-  </app-project-card>
+    [link]="project.link"
+    [sourceCode]="project.sourceCode"
+    [more]="project.more"
+  ></app-project-card>
 </div>
