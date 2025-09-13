@@ -1,46 +1,72 @@
-
-<nav class="bg-white dark:bg-gray-900 shadow-md py-4 px-6 flex justify-between items-center sticky top-0 z-50">
+<nav
+  class="bg-white dark:bg-gray-900 shadow-md py-4 px-6 flex justify-between items-center sticky top-0 z-50"
+>
   <div class="text-2xl font-bold text-orange-500">My Portfolio</div>
   <ul class="flex space-x-6">
     <li>
-      <a routerLink="/" class="text-gray-800 dark:text-gray-200 hover:text-orange-500 transition-colors duration-300">Home</a>
+      <a
+        routerLink="/"
+        class="text-gray-800 dark:text-gray-200 hover:text-orange-500 transition-colors duration-300"
+        >Home</a
+      >
     </li>
     <li>
-      <a routerLink="/about" class="text-gray-800 dark:text-gray-200 hover:text-orange-500 transition-colors duration-300">About</a>
+      <a
+        routerLink="/about"
+        class="text-gray-800 dark:text-gray-200 hover:text-orange-500 transition-colors duration-300"
+        >About</a
+      >
     </li>
     <li>
-      <a routerLink="/contact" class="text-gray-800 dark:text-gray-200 hover:text-orange-500 transition-colors duration-300">Contact</a>
+      <a
+        routerLink="/contact"
+        class="text-gray-800 dark:text-gray-200 hover:text-orange-500 transition-colors duration-300"
+        >Contact</a
+      >
+    </li>
+    <li>
+      <app-lang></app-lang>
     </li>
   </ul>
 </nav>
 
-
-<main class="min-h-screen bg-gradient-to-b from-yellow-50 via-orange-50 to-pink-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-700 p-6">
+<main
+  class="min-h-screen bg-gradient-to-b from-yellow-50 via-orange-50 to-pink-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-700 p-6"
+>
   <router-outlet></router-outlet>
 </main>
 
-<footer class="bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 py-8">
-  <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
-    
+<footer
+  class="bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 py-8"
+>
+  <div
+    class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4"
+  >
     <!-- Copyright -->
     <p class="text-sm">&copy; 2025 Suco Ferizović. All rights reserved.</p>
-    
+
     <!-- Social links -->
     <div class="flex gap-4">
-      <a href="https://github.com/Sucof777" target="_blank" class="hover:text-orange-500 transition-colors">
+      <a
+        href="https://github.com/Sucof777"
+        target="_blank"
+        class="hover:text-orange-500 transition-colors"
+      >
         GitHub
       </a>
-      <a href="https://linkedin.com/in/username" target="_blank" class="hover:text-orange-500 transition-colors">
+      <a
+        href="https://linkedin.com/in/username"
+        target="_blank"
+        class="hover:text-orange-500 transition-colors"
+      >
         LinkedIn
       </a>
-      <a href="mailto:ferizovicsuco3@gmail.com" class="hover:text-orange-500 transition-colors">
+      <a
+        href="mailto:ferizovicsuco3@gmail.com"
+        class="hover:text-orange-500 transition-colors"
+      >
         Email
       </a>
     </div>
-
   </div>
 </footer>
-
-
-
-

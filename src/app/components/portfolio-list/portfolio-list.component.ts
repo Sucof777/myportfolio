@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common'; // obavezno za *ngFor i ostalo
 import { ProjectCardComponent } from '../project-card/project-card.component';
-
+import { TranslateModule } from '@ngx-translate/core';
 @Component({
   selector: 'app-portfolio-list',
   standalone: true,
-  imports: [CommonModule, ProjectCardComponent], // ⚠ Dodaj ovdje
+  imports: [CommonModule, ProjectCardComponent, TranslateModule], // ⚠ Dodaj ovdje
   templateUrl: './portfolio-list.component.html',
   styleUrls: ['./portfolio-list.component.css'],
 })
