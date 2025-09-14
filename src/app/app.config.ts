@@ -11,7 +11,7 @@ import {
   withEventReplay,
 } from '@angular/platform-browser';
 
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withFetch } from '@angular/common/http';
 import { provideTranslateService } from '@ngx-translate/core';
 import { provideTranslateHttpLoader } from '@ngx-translate/http-loader';
 
@@ -20,14 +20,14 @@ export const appConfig: ApplicationConfig = {
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
     provideClientHydration(withEventReplay()),
-    provideHttpClient(),
+    provideHttpClient(withFetch()),
 
     provideTranslateService({
       // jezik koji se koristi ako ključ nedostaje u aktivnom jeziku
       fallbackLang: 'sr',
       // http loader: čita ./assets/i18n/{lang}.json
       loader: provideTranslateHttpLoader({
-        prefix: './assets/i18n/',
+        prefix: 'assets/i18n/',
         suffix: '.json',
         // opcionalno:
         // enforceLoading: true,   // cache-busting
