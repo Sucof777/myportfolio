@@ -1,0 +1,14 @@
+[
+  {
+    "category": "Frontend",
+    "items": ["Angular", "TypeScript", "Tailwind CSS", "HTML", "CSS"]
+  },
+  {
+    "category": "Backend",
+    "items": ["Node.js", "Express", "REST APIs"]
+  },
+  {
+    "category": "Tools",
+    "items": ["Git", "GitHub", "Jira", "Docker"]
+  }
+]

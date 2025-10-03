@@ -1,0 +1,16 @@
+<section class="bg-white dark:bg-gray-900 rounded-2xl shadow-md p-8 text-center">
+  <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+    {{ 'RESUME.TITLE' | translate }}
+  </h2>
+  <p class="text-gray-600 dark:text-gray-300 mb-6">
+    {{ 'RESUME.DESCRIPTION' | translate }}
+  </p>
+  <a
+    class="inline-flex items-center px-6 py-3 text-lg font-semibold text-white bg-blue-600 rounded-full shadow hover:bg-blue-700 transition"
+    [href]="resumeUrl"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    {{ 'RESUME.DOWNLOAD' | translate }}
+  </a>
+</section>
