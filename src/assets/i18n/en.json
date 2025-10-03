@@ -2,5 +2,16 @@
   "HOME": {
     "TITLE": "Welcome to my portfolio 🚀",
     "DESCRIPTION": "Here you can explore some of the projects I developed while working and learning web development. Each project has its own description, live demo, and link to the source code."
+  },
+  "SKILLS": {
+    "TITLE": "Skills"
+  },
+  "EXPERIENCE": {
+    "TITLE": "Experience"
+  },
+  "RESUME": {
+    "TITLE": "Download my CV",
+    "DESCRIPTION": "Take a look at my resume for more details about my experience and skills.",
+    "DOWNLOAD": "Download CV"
   }
 }
