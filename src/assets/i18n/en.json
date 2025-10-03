@@ -1,6 +1,119 @@
 {
   "HOME": {
+    "TAGLINE": "Product-minded frontend engineer",
     "TITLE": "Welcome to my portfolio 🚀",
-    "DESCRIPTION": "Here you can explore some of the projects I developed while working and learning web development. Each project has its own description, live demo, and link to the source code."
+    "DESCRIPTION": "Explore the products I've shipped while building delightful, resilient web experiences. Each case study comes with a quick summary, live demo, and source code for a transparent look at my process.",
+    "ACTION": "Let's build something",
+    "ACTION_ARIA": "Open the contact form",
+    "SECONDARY_ACTION": "Browse recent work",
+    "PROJECTS_TITLE": "Featured case studies",
+    "PROJECTS_DESCRIPTION": "Curated projects that highlight my focus on performance, accessibility, and clean architecture across the full stack."
+  },
+  "SKILLS": {
+    "PRETITLE": "Skill set",
+    "TITLE": "Tools I use every day",
+    "DESCRIPTION": "A mix of frameworks, languages, and workflows that help me deliver polished experiences—from first prototype to production-ready release.",
+    "CALL_OUT": "Continuously evolving with modern web standards",
+    "EXPERIENCE_BADGE": "Hands-on",
+    "ERROR": "Unable to load skills at the moment. Please refresh to try again.",
+    "CATEGORIES": {
+      "FRONTEND": {
+        "TITLE": "Frontend",
+        "DESCRIPTION": "Component-driven UIs, accessible design systems, and smooth interactions."
+      },
+      "BACKEND": {
+        "TITLE": "Backend",
+        "DESCRIPTION": "APIs and server-side logic that keep products fast, reliable, and secure."
+      },
+      "TOOLS": {
+        "TITLE": "Tools",
+        "DESCRIPTION": "Collaboration and delivery tooling that keeps teams in sync."
+      }
+    },
+    "ITEMS": {
+      "ANGULAR": "Angular",
+      "TYPESCRIPT": "TypeScript",
+      "TAILWIND": "Tailwind CSS",
+      "HTML": "Semantic HTML",
+      "CSS": "Modern CSS",
+      "NODE": "Node.js",
+      "EXPRESS": "Express",
+      "REST": "REST APIs",
+      "GIT": "Git",
+      "GITHUB": "GitHub",
+      "JIRA": "Jira",
+      "DOCKER": "Docker"
+    }
+  },
+  "EXPERIENCE": {
+    "SUBTITLE": "Timeline",
+    "TITLE": "Experience",
+    "DESCRIPTION": "A snapshot of the roles where I honed my craft, collaborated with cross-functional teams, and shipped features that mattered.",
+    "TIMELINE_LABEL": "Professional experience timeline",
+    "ITEMS": {
+      "FREELANCE": {
+        "PERIOD": "2023 — Present",
+        "ROLE": "Frontend Developer",
+        "COMPANY": "Freelance",
+        "DESCRIPTION": "Partner with founders and teams to design, prototype, and launch web apps with a focus on maintainability and accessibility.",
+        "HIGHLIGHT": "Leadership",
+        "RESULT": "Delivered high-impact MVPs with measurable UX improvements."
+      },
+      "STARTUP": {
+        "PERIOD": "2021 — 2023",
+        "ROLE": "Junior Developer",
+        "COMPANY": "Tech Startup",
+        "DESCRIPTION": "Built cross-platform features, automated CI/CD workflows, and collaborated closely with designers to iterate quickly.",
+        "HIGHLIGHT": "Scale",
+        "RESULT": "Accelerated release cadence and improved Lighthouse scores across the product."
+      },
+      "AGENCY": {
+        "PERIOD": "2019 — 2021",
+        "ROLE": "Intern Developer",
+        "COMPANY": "Digital Agency",
+        "DESCRIPTION": "Supported senior engineers on bespoke marketing sites and e-commerce builds across diverse industries.",
+        "HIGHLIGHT": "Craft",
+        "RESULT": "Shipped accessible interfaces for clients in fintech, travel, and education."
+      }
+    }
+  },
+  "RESUME": {
+    "PRETITLE": "Resume",
+    "TITLE": "Download my CV",
+    "SUBTITLE": "Comprehensive experience overview",
+    "DESCRIPTION": "Take a closer look at my journey, responsibilities, and achievements across recent roles.",
+    "BADGE": "PDF",
+    "PRIVACY_NOTE": "The file is hosted locally in this project so you can access it instantly.",
+    "DOWNLOAD": "Download CV",
+    "ACCESSIBLE_LABEL": "Download a PDF copy of my CV",
+    "SECONDARY_TEXT": "Updated regularly with the latest projects and certifications."
+  },
+  "PROJECT": {
+    "CARD": {
+      "FEATURED": "Featured",
+      "OPEN_SOURCE": "Open source"
+    },
+    "BUTTONS": {
+      "LIVE": "View live",
+      "LIVE_ARIA": "Open the live demo in a new tab",
+      "SOURCE": "Source code",
+      "SOURCE_ARIA": "Open the source code repository",
+      "MORE": "Case study",
+      "MORE_ARIA": "Open the detailed case study"
+    }
+  },
+  "PROJECTS": {
+    "CAR_QUIZ": {
+      "TITLE": "Car Quiz App",
+      "DESCRIPTION": "An interactive Angular + Node.js experience that suggests the ideal car based on real-time quiz responses."
+    },
+    "WEATHER_APP": {
+      "TITLE": "Weather App",
+      "DESCRIPTION": "A responsive weather dashboard with location search, forecast charts, and animated states powered by Angular."
+    },
+    "PORTFOLIO": {
+      "TITLE": "Portfolio redesign",
+      "DESCRIPTION": "This very site—built as a component-driven Angular app with Tailwind theming and granular localization."
+    }
   }
 }

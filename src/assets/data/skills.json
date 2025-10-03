@@ -1,0 +1,32 @@
+[
+  {
+    "categoryKey": "SKILLS.CATEGORIES.FRONTEND.TITLE",
+    "descriptionKey": "SKILLS.CATEGORIES.FRONTEND.DESCRIPTION",
+    "items": [
+      "SKILLS.ITEMS.ANGULAR",
+      "SKILLS.ITEMS.TYPESCRIPT",
+      "SKILLS.ITEMS.TAILWIND",
+      "SKILLS.ITEMS.HTML",
+      "SKILLS.ITEMS.CSS"
+    ]
+  },
+  {
+    "categoryKey": "SKILLS.CATEGORIES.BACKEND.TITLE",
+    "descriptionKey": "SKILLS.CATEGORIES.BACKEND.DESCRIPTION",
+    "items": [
+      "SKILLS.ITEMS.NODE",
+      "SKILLS.ITEMS.EXPRESS",
+      "SKILLS.ITEMS.REST"
+    ]
+  },
+  {
+    "categoryKey": "SKILLS.CATEGORIES.TOOLS.TITLE",
+    "descriptionKey": "SKILLS.CATEGORIES.TOOLS.DESCRIPTION",
+    "items": [
+      "SKILLS.ITEMS.GIT",
+      "SKILLS.ITEMS.GITHUB",
+      "SKILLS.ITEMS.JIRA",
+      "SKILLS.ITEMS.DOCKER"
+    ]
+  }
+]

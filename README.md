@@ -54,6 +54,23 @@ ng e2e
 
 Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
 
+## Pushing changes to GitHub
+
+This repository does not ship with a preconfigured remote. To simplify pushing your local work to GitHub, use the helper script:
+
+```bash
+# export the GitHub repository URL once
+export GIT_REMOTE_URL=git@github.com:username/myportfolio.git
+
+# push the current branch (defaults to the active branch)
+bash scripts/push.sh
+
+# or push an explicit branch name
+bash scripts/push.sh main
+```
+
+If the `origin` remote is already configured, the script will reuse it. Otherwise, it will add the remote using `GIT_REMOTE_URL` and push the selected branch.
+
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
