@@ -1,26 +1,27 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common'; // obavezno za *ngFor i ostalo
+import { CommonModule } from '@angular/common';
 import { ProjectCardComponent } from '../project-card/project-card.component';
 import { TranslateModule } from '@ngx-translate/core';
-import { SkillsComponent } from '../skills/skills.component';
-import { ExperienceTimelineComponent } from '../experience-timeline/experience-timeline.component';
-import { ResumeDownloadComponent } from '../resume-download/resume-download.component';
+
+type Project = {
+  readonly titleKey: string;
+  readonly descriptionKey: string;
+  readonly image: string;
+  readonly link: string | null;
+  readonly sourceCode: string | null;
+  readonly more: string | null;
+  readonly tags: readonly string[];
+};
+
 @Component({
   selector: 'app-portfolio-list',
   standalone: true,
-  imports: [
-    CommonModule,
-    ProjectCardComponent,
-    TranslateModule,
-    SkillsComponent,
-    ExperienceTimelineComponent,
-    ResumeDownloadComponent,
-  ], // ⚠ Dodaj ovdje
+  imports: [CommonModule, ProjectCardComponent, TranslateModule],
   templateUrl: './portfolio-list.component.html',
   styleUrls: ['./portfolio-list.component.css'],
 })
 export class PortfolioListComponent {
-  readonly projects = [
+  readonly projects: readonly Project[] = [
     {
       titleKey: 'PROJECTS.CAR_QUIZ.TITLE',
       descriptionKey: 'PROJECTS.CAR_QUIZ.DESCRIPTION',
@@ -48,5 +49,5 @@ export class PortfolioListComponent {
       more: null,
       tags: ['SKILLS.ITEMS.ANGULAR', 'SKILLS.ITEMS.TAILWIND', 'SKILLS.ITEMS.GITHUB'],
     },
-  ] as const;
+  ];
 }
