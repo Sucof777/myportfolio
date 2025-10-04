@@ -1,6 +1,6 @@
 <section class="bg-white dark:bg-gray-900 rounded-2xl shadow-md p-8">
   <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">
-    {{ 'EXPERIENCE.TITLE' | translate }}
+    {{ "EXPERIENCE.TITLE" | translate }}
   </h2>
   <ol class="relative border-l border-gray-200 dark:border-gray-700">
     <li *ngFor="let item of experiences" class="mb-10 ml-6">
@@ -9,7 +9,9 @@
       >
         <span class="w-3 h-3 bg-blue-500 rounded-full"></span>
       </span>
-      <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+      <time
+        class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
+      >
         {{ item.period }}
       </time>
       <h3 class="text-xl font-semibold text-gray-900 dark:text-white">

@@ -1,71 +1,88 @@
 <nav
-  class="bg-white dark:bg-gray-900 shadow-md py-4 px-6 flex justify-between items-center sticky top-0 z-50"
+  class="sticky top-0 z-50 bg-white/90 shadow-md backdrop-blur transition-colors duration-300 dark:bg-gray-900/90"
+  [attr.aria-label]="'LAYOUT.NAV.ARIA' | translate"
 >
-  <div class="text-2xl font-bold text-orange-500">My Portfolio</div>
-  <ul class="flex space-x-6">
-    <li>
-      <a
-        routerLink="/"
-        class="text-gray-800 dark:text-gray-200 hover:text-orange-500 transition-colors duration-300"
-        >Home</a
-      >
-    </li>
-    <li>
-      <a
-        routerLink="/about"
-        class="text-gray-800 dark:text-gray-200 hover:text-orange-500 transition-colors duration-300"
-        >About</a
-      >
-    </li>
-    <li>
-      <a
-        routerLink="/contact"
-        class="text-gray-800 dark:text-gray-200 hover:text-orange-500 transition-colors duration-300"
-        >Contact</a
-      >
-    </li>
-    <li>
-      <app-lang></app-lang>
-    </li>
-  </ul>
+  <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4">
+    <a
+      routerLink="/portfolio"
+      class="text-2xl font-semibold text-orange-500 transition-colors duration-300 hover:text-orange-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400"
+    >
+      {{ 'LAYOUT.NAV.BRAND' | translate }}
+    </a>
+    <ul class="flex items-center gap-6 text-sm font-medium">
+      <li>
+        <a
+          routerLink="/portfolio"
+          routerLinkActive="text-orange-500"
+          class="transition-colors duration-300 hover:text-orange-500 dark:text-gray-200 dark:hover:text-orange-400"
+        >
+          {{ 'LAYOUT.NAV.LINKS.HOME' | translate }}
+        </a>
+      </li>
+      <li>
+        <a
+          routerLink="/about"
+          routerLinkActive="text-orange-500"
+          class="transition-colors duration-300 hover:text-orange-500 dark:text-gray-200 dark:hover:text-orange-400"
+        >
+          {{ 'LAYOUT.NAV.LINKS.ABOUT' | translate }}
+        </a>
+      </li>
+      <li>
+        <a
+          routerLink="/contact"
+          routerLinkActive="text-orange-500"
+          class="transition-colors duration-300 hover:text-orange-500 dark:text-gray-200 dark:hover:text-orange-400"
+        >
+          {{ 'LAYOUT.NAV.LINKS.CONTACT' | translate }}
+        </a>
+      </li>
+      <li>
+        <app-lang></app-lang>
+      </li>
+    </ul>
+  </div>
 </nav>
 
 <main
-  class="min-h-screen bg-gradient-to-b from-yellow-50 via-orange-50 to-pink-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-700 p-6"
+  class="min-h-screen bg-gradient-to-b from-yellow-50 via-orange-50 to-pink-50 p-6 transition-colors duration-300 dark:from-gray-900 dark:via-gray-800 dark:to-gray-700"
 >
   <router-outlet></router-outlet>
 </main>
 
 <footer
-  class="bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 py-8"
+  class="bg-gray-100 py-8 text-gray-700 transition-colors duration-300 dark:bg-gray-900 dark:text-gray-300"
 >
-  <div
-    class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4"
-  >
-    <!-- Copyright -->
-    <p class="text-sm">&copy; 2025 Suco Ferizović. All rights reserved.</p>
+  <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-6 text-center md:flex-row md:text-left">
+    <p class="text-sm">
+      {{ 'LAYOUT.FOOTER.COPYRIGHT' | translate: { year: currentYear } }}
+    </p>
 
-    <!-- Social links -->
-    <div class="flex gap-4">
+    <div class="flex items-center gap-4">
       <a
         href="https://github.com/Sucof777"
         target="_blank"
-        class="hover:text-orange-500 transition-colors"
+        rel="noopener noreferrer"
+        class="transition-colors duration-300 hover:text-orange-500"
+        [attr.aria-label]="'LAYOUT.FOOTER.SOCIAL.GITHUB_ARIA' | translate"
       >
-        GitHub
+        {{ 'LAYOUT.FOOTER.SOCIAL.GITHUB' | translate }}
       </a>
       <a
         href="https://linkedin.com/in/username"
         target="_blank"
-        class="hover:text-orange-500 transition-colors"
+        rel="noopener noreferrer"
+        class="transition-colors duration-300 hover:text-orange-500"
+        [attr.aria-label]="'LAYOUT.FOOTER.SOCIAL.LINKEDIN_ARIA' | translate"
       >
-        LinkedIn
+        {{ 'LAYOUT.FOOTER.SOCIAL.LINKEDIN' | translate }}
       </a>
       <a
         href="mailto:ferizovicsuco3@gmail.com"
-        class="hover:text-orange-500 transition-colors"
+        class="transition-colors duration-300 hover:text-orange-500"
+        [attr.aria-label]="'LAYOUT.FOOTER.SOCIAL.EMAIL_ARIA' | translate"
       >
-        Email
+        {{ 'LAYOUT.FOOTER.SOCIAL.EMAIL' | translate }}
       </a>
     </div>
   </div>
