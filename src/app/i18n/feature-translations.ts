@@ -1,7 +1,7 @@
 export const featureTranslationsEn = {
   NAV: {
-    TAGLINE: 'Digital portfolio',
-    BRAND: 'Suad Ferizović',
+    TAGLINE: 'Web Developer',
+    BRAND: 'Šućo Ferizović',
     ARIA: {
       NAVIGATION: 'Primary navigation',
       LANGUAGE: 'Change language',
@@ -16,7 +16,7 @@ export const featureTranslationsEn = {
   },
   FOOTER: {
     TAGLINE: 'Building thoughtful digital experiences',
-    COPYRIGHT: '© {{ year }} Suad Ferizović. All rights reserved.',
+    COPYRIGHT: '© {{ year }} Šućo Ferizović. All rights reserved.',
     SOCIAL: {
       GITHUB: 'GitHub profile',
       LINKEDIN: 'LinkedIn profile',
@@ -154,7 +154,7 @@ export const featureTranslationsEn = {
     PRETITLE: 'About',
     TITLE: 'Meet the developer behind the work',
     ROLE: 'Frontend engineer & product partner',
-    LOCATION: 'Sarajevo, Bosnia and Herzegovina',
+    LOCATION: 'Podgorica, Montenegro',
     INTRO:
       'I design, code, and iterate on modern web products with a focus on accessible, maintainable interfaces that scale with your business.',
     DESCRIPTIONS: {
@@ -194,7 +194,7 @@ export const featureTranslationsEn = {
       },
       LOCATION: {
         LABEL: 'Location',
-        VALUE: 'Sarajevo, Bosnia and Herzegovina',
+        VALUE: 'Podgorica, Montenegro',
       },
       AVAILABILITY: {
         LABEL: 'Availability',
@@ -229,8 +229,8 @@ export const featureTranslationsEn = {
 
 export const featureTranslationsSr = {
   NAV: {
-    TAGLINE: 'Digitalni portfolio',
-    BRAND: 'Suad Ferizović',
+    TAGLINE: 'Web Developer',
+    BRAND: 'Šućo Ferizović',
     ARIA: {
       NAVIGATION: 'Glavna navigacija',
       LANGUAGE: 'Promijeni jezik',
@@ -245,7 +245,7 @@ export const featureTranslationsSr = {
   },
   FOOTER: {
     TAGLINE: 'Gradim promišljena digitalna iskustva',
-    COPYRIGHT: '© {{ year }} Suad Ferizović. Sva prava zadržana.',
+    COPYRIGHT: '© {{ year }} Šućo Ferizović. Sva prava zadržana.',
     SOCIAL: {
       GITHUB: 'GitHub profil',
       LINKEDIN: 'LinkedIn profil',
@@ -383,7 +383,7 @@ export const featureTranslationsSr = {
     PRETITLE: 'O meni',
     TITLE: 'Upoznajte developera iza projekata',
     ROLE: 'Frontend inženjer i produkt partner',
-    LOCATION: 'Sarajevo, Bosna i Hercegovina',
+    LOCATION: 'Podgorica, Crna Gora',
     INTRO:
       'Dizajniram, razvijam i iteriram moderne web proizvode sa fokusom na pristupačne i održive interfejse koji rastu zajedno sa vašim biznisom.',
     DESCRIPTIONS: {
@@ -423,7 +423,7 @@ export const featureTranslationsSr = {
       },
       LOCATION: {
         LABEL: 'Lokacija',
-        VALUE: 'Sarajevo, Bosna i Hercegovina',
+        VALUE: 'Podgorica, Crna Gora',
       },
       AVAILABILITY: {
         LABEL: 'Dostupnost',
