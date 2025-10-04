@@ -161,7 +161,7 @@
     "PRETITLE": "O meni",
     "TITLE": "Upoznaj osobu iza piksela",
     "ROLE": "Frontend inženjer i UI entuzijasta",
-    "LOCATION": "Sa sjedištem u Bosni i Hercegovini",
+    "LOCATION": "Sa sjedištem u Podgorici, Crna Gora",
     "INTRO": "Zdravo, ja sam Sućo — developer usmjeren na proizvod koji spaja osjećaj za dizajn sa pouzdanim inženjeringom.",
     "DESCRIPTIONS": {
       "P1": "Uživam u pretvaranju složenih zahtjeva u prijatne i brze interfejse. Angular, TypeScript i moderni CSS su alati kojima gradim skalabilne sisteme.",
@@ -199,7 +199,7 @@
       },
       "LOCATION": {
         "LABEL": "Lokacija",
-        "VALUE": "Tuzla, Bosna i Hercegovina"
+        "VALUE": "Podgorica, Crna Gora"
       },
       "AVAILABILITY": {
         "LABEL": "Dostupnost",

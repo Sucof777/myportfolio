@@ -4,6 +4,19 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { LanguageSwitcherComponent } from './components/languague-switcher/languague-switcher.component';
 import { FeatureTranslationLoaderService } from './i18n/feature-translation-loader.service';
+import { LanguageService } from './services/languague.service';
+
+type NavLink = {
+  path: string;
+  label: string;
+  exact?: boolean;
+};
+
+type SocialLink = {
+  icon: 'github' | 'linkedin' | 'mail';
+  href: string;
+  label: string;
+};
 
 type NavLink = {
   path: string;
@@ -60,8 +73,19 @@ export class AppComponent {
 
   constructor(
     private readonly featureTranslationLoader: FeatureTranslationLoaderService,
+    private readonly languageService: LanguageService,
   ) {
     this.featureTranslationLoader.load();
+    // ensure navigation/footer translations resolve using the persisted language
+    this.languageService.current();
+  }
+
+  trackByNav(_: number, link: NavLink): string {
+    return link.path;
+  }
+
+  trackBySocial(_: number, link: SocialLink): string {
+    return link.href;
   }
 
   trackByNav(_: number, link: NavLink): string {
