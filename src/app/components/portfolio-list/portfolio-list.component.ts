@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProjectCardComponent } from '../project-card/project-card.component';
 import { TranslateModule } from '@ngx-translate/core';
+<<<<<<< HEAD
 
 type Project = {
   readonly titleKey: string;
@@ -17,6 +18,22 @@ type Project = {
   selector: 'app-portfolio-list',
   standalone: true,
   imports: [CommonModule, ProjectCardComponent, TranslateModule],
+=======
+import { SkillsComponent } from '../skills/skills.component';
+import { ExperienceTimelineComponent } from '../experience-timeline/experience-timeline.component';
+import { ResumeDownloadComponent } from '../resume-download/resume-download.component';
+@Component({
+  selector: 'app-portfolio-list',
+  standalone: true,
+  imports: [
+    CommonModule,
+    ProjectCardComponent,
+    TranslateModule,
+    SkillsComponent,
+    ExperienceTimelineComponent,
+    ResumeDownloadComponent,
+  ], // ⚠ Dodaj ovdje
+>>>>>>> main
   templateUrl: './portfolio-list.component.html',
   styleUrls: ['./portfolio-list.component.css'],
 })

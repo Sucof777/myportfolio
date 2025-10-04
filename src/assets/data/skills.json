@@ -1,5 +1,6 @@
 [
   {
+<<<<<<< HEAD
     "categoryKey": "SKILLS.CATEGORIES.FRONTEND.TITLE",
     "descriptionKey": "SKILLS.CATEGORIES.FRONTEND.DESCRIPTION",
     "items": [
@@ -28,5 +29,17 @@
       "SKILLS.ITEMS.JIRA",
       "SKILLS.ITEMS.DOCKER"
     ]
+=======
+    "category": "Frontend",
+    "items": ["Angular", "TypeScript", "Tailwind CSS", "HTML", "CSS"]
+  },
+  {
+    "category": "Backend",
+    "items": ["Node.js", "Express", "REST APIs"]
+  },
+  {
+    "category": "Tools",
+    "items": ["Git", "GitHub", "Jira", "Docker"]
+>>>>>>> main
   }
 ]
