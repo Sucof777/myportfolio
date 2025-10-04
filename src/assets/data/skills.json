@@ -1,11 +1,11 @@
 [
   {
-<<<<<<< HEAD
     "categoryKey": "SKILLS.CATEGORIES.FRONTEND.TITLE",
     "descriptionKey": "SKILLS.CATEGORIES.FRONTEND.DESCRIPTION",
     "items": [
       "SKILLS.ITEMS.ANGULAR",
       "SKILLS.ITEMS.TYPESCRIPT",
+      "SKILLS.ITEMS.RXJS",
       "SKILLS.ITEMS.TAILWIND",
       "SKILLS.ITEMS.HTML",
       "SKILLS.ITEMS.CSS"
@@ -17,6 +17,7 @@
     "items": [
       "SKILLS.ITEMS.NODE",
       "SKILLS.ITEMS.EXPRESS",
+      "SKILLS.ITEMS.NEST",
       "SKILLS.ITEMS.REST"
     ]
   },
@@ -27,19 +28,26 @@
       "SKILLS.ITEMS.GIT",
       "SKILLS.ITEMS.GITHUB",
       "SKILLS.ITEMS.JIRA",
-      "SKILLS.ITEMS.DOCKER"
+      "SKILLS.ITEMS.DOCKER",
+      "SKILLS.ITEMS.FIGMA"
     ]
-=======
-    "category": "Frontend",
-    "items": ["Angular", "TypeScript", "Tailwind CSS", "HTML", "CSS"]
   },
   {
-    "category": "Backend",
-    "items": ["Node.js", "Express", "REST APIs"]
+    "categoryKey": "SKILLS.CATEGORIES.TESTING.TITLE",
+    "descriptionKey": "SKILLS.CATEGORIES.TESTING.DESCRIPTION",
+    "items": [
+      "SKILLS.ITEMS.JEST",
+      "SKILLS.ITEMS.CYPRESS",
+      "SKILLS.ITEMS.PLAYWRIGHT"
+    ]
   },
   {
-    "category": "Tools",
-    "items": ["Git", "GitHub", "Jira", "Docker"]
->>>>>>> main
+    "categoryKey": "SKILLS.CATEGORIES.ARCHITECTURE.TITLE",
+    "descriptionKey": "SKILLS.CATEGORIES.ARCHITECTURE.DESCRIPTION",
+    "items": [
+      "SKILLS.ITEMS.CLEAN_CODE",
+      "SKILLS.ITEMS.DDD",
+      "SKILLS.ITEMS.ACCESSIBILITY"
+    ]
   }
 ]

@@ -1,31 +1,195 @@
-<div class="flex justify-center mt-10">
+<section
+  id="about"
+  class="relative overflow-hidden rounded-3xl border border-slate-200/70 bg-white/80 px-6 py-16 shadow-xl shadow-slate-900/5 backdrop-blur dark:border-slate-800/60 dark:bg-slate-900/60"
+  aria-labelledby="about-title"
+>
   <div
-    class="max-w-xl w-full bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 p-6"
-  >
-    <!-- Slika -->
-    <div class="flex justify-center mb-6">
-      <img
-        [src]="about.image"
-        [alt]="about.name"
-        class="w-48 h-48 rounded-full object-cover border-4 border-orange-400 shadow-md"
-      />
+    class="pointer-events-none absolute -right-32 top-1/2 h-64 w-64 -translate-y-1/2 rounded-full bg-gradient-to-br from-blue-500/20 via-purple-500/10 to-transparent blur-3xl"
+  ></div>
+  <div
+    class="pointer-events-none absolute -left-24 top-10 h-52 w-52 rounded-full bg-gradient-to-br from-slate-200/80 to-transparent blur-3xl dark:from-slate-700/50"
+  ></div>
+
+  <div class="relative mx-auto grid max-w-6xl gap-14 lg:grid-cols-[minmax(0,340px),minmax(0,1fr)] lg:items-center">
+    <div class="flex flex-col gap-8">
+      <div class="relative overflow-hidden rounded-3xl border border-slate-200/70 bg-white/80 p-3 shadow-sm dark:border-slate-700/70 dark:bg-slate-900/70">
+        <img
+          [src]="profileImage"
+          [alt]="'ABOUT.TITLE' | translate"
+          class="h-80 w-full rounded-2xl object-cover shadow-lg"
+        />
+        <div class="absolute inset-x-5 bottom-5 flex items-center justify-between rounded-2xl bg-slate-900/80 px-5 py-3 text-sm text-white backdrop-blur">
+          <div>
+            <p class="text-xs uppercase tracking-[0.35em] text-blue-200">
+              {{ 'ABOUT.PRETITLE' | translate }}
+            </p>
+            <p class="text-base font-semibold">
+              {{ 'ABOUT.LOCATION' | translate }}
+            </p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="h-8 w-8 text-blue-200"
+            aria-hidden="true"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+            />
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+            />
+          </svg>
+        </div>
+      </div>
+
+      <div class="grid gap-4 rounded-3xl border border-slate-200/70 bg-white/80 p-6 shadow-sm dark:border-slate-700/70 dark:bg-slate-900/70">
+        <p class="text-sm font-semibold uppercase tracking-[0.45em] text-blue-500">
+          {{ 'ABOUT.PRETITLE' | translate }}
+        </p>
+        <h2 class="text-2xl font-bold text-slate-900 dark:text-white">
+          {{ 'ABOUT.ROLE' | translate }}
+        </h2>
+        <p class="text-base text-slate-600 dark:text-slate-300">
+          {{ 'ABOUT.INTRO' | translate }}
+        </p>
+      </div>
     </div>
 
-    <!-- Ime i role -->
-    <h2
-      class="text-3xl font-bold text-center text-gray-800 dark:text-gray-100 mb-2"
-    >
-      {{ about.name }}
-    </h2>
-    <p class="text-xl text-center text-gray-600 dark:text-gray-300 mb-4">
-      {{ about.role }}
-    </p>
+    <div class="space-y-8">
+      <div class="space-y-4">
+        <p class="text-sm font-semibold uppercase tracking-[0.4em] text-blue-500">
+          {{ 'ABOUT.PRETITLE' | translate }}
+        </p>
+        <h1 id="about-title" class="text-3xl font-extrabold text-slate-900 dark:text-white md:text-4xl">
+          {{ 'ABOUT.TITLE' | translate }}
+        </h1>
+        <p class="text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+          {{ 'ABOUT.INTRO' | translate }}
+        </p>
+      </div>
 
-    <!-- Opis -->
-    <div
-      class="text-gray-700 dark:text-gray-300 text-lg leading-relaxed space-y-4 font-sans"
-    >
-      <p *ngFor="let para of about.description">{{ para }}</p>
+      <div class="space-y-4 text-base leading-relaxed text-slate-600 dark:text-slate-300">
+        <p *ngFor="let key of descriptionKeys; trackBy: trackByDescription">
+          {{ key | translate }}
+        </p>
+      </div>
+
+      <div class="grid gap-4 sm:grid-cols-2">
+        <article
+          *ngFor="let highlight of highlights; trackBy: trackByHighlight"
+          class="group flex flex-col gap-3 rounded-2xl border border-slate-200/80 bg-white/80 p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-slate-700/70 dark:bg-slate-900/70"
+        >
+          <span
+            class="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-500 text-white shadow-md"
+            aria-hidden="true"
+          >
+            <ng-container [ngSwitch]="highlight.icon">
+              <svg
+                *ngSwitchCase="'sparkles'"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                class="h-5 w-5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9.813 15.904 9 18l-2.098-.813a2.25 2.25 0 0 1-1.29-1.29L4.8 13.8l2.098-.813a2.25 2.25 0 0 0 1.29-1.29L9 9.6l.813 2.098a2.25 2.25 0 0 0 1.29 1.29L13.2 13.8l-2.098.813a2.25 2.25 0 0 0-1.29 1.29Z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 3v2.25M12 18.75V21M4.5 12H6.75M17.25 12H19.5M5.682 5.682l1.591 1.591M16.727 16.727l1.591 1.591M16.727 7.273l1.591-1.591M5.682 18.318l1.591-1.591"
+                />
+              </svg>
+              <svg
+                *ngSwitchCase="'handshake'"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                class="h-5 w-5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m16.5 10.5 3.75 3.75a2.121 2.121 0 1 1-3 3L12 12m4.5-1.5 2.651-2.651a3 3 0 0 0-4.243-4.243L12 6"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M8.25 6.75 11.25 9m-6.32-1.83 1.72-1.72a3 3 0 0 1 4.243 0L12 6m-6.75 6 3.75 3.75a2.121 2.121 0 0 0 3 0L12 12m-6.75 6.75 3-3"
+                />
+              </svg>
+              <svg
+                *ngSwitchDefault
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                class="h-5 w-5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3 12.75 8.25 7.5 12 11.25l6.75-6.75"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 20.25h12a1.5 1.5 0 0 0 1.5-1.5v-9"
+                />
+              </svg>
+            </ng-container>
+          </span>
+          <h3 class="text-lg font-semibold text-slate-900 dark:text-white">
+            {{ highlight.titleKey | translate }}
+          </h3>
+          <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+            {{ highlight.descriptionKey | translate }}
+          </p>
+        </article>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-blue-200/60 bg-blue-50/70 px-6 py-5 shadow-inner dark:border-blue-500/30 dark:bg-blue-500/10">
+        <div>
+          <p class="text-sm font-semibold uppercase tracking-[0.35em] text-blue-500">
+            {{ 'ABOUT.CTA.TITLE' | translate }}
+          </p>
+          <p class="mt-1 text-base text-slate-600 dark:text-slate-200">
+            {{ 'ABOUT.CTA.DESCRIPTION' | translate }}
+          </p>
+        </div>
+        <a
+          routerLink="/contact"
+          class="inline-flex items-center gap-2 rounded-full bg-slate-900 px-5 py-3 text-sm font-semibold text-white shadow transition hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900 dark:bg-white dark:text-slate-900"
+        >
+          {{ 'ABOUT.CTA.BUTTON' | translate }}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            class="h-4 w-4"
+            aria-hidden="true"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="m17.25 6.75-10.5 10.5M17.25 6.75H8.25m9 0v9" />
+          </svg>
+        </a>
+      </div>
     </div>
   </div>
-</div>
+</section>
