@@ -2,22 +2,37 @@
   class="relative overflow-hidden rounded-3xl border border-slate-200/70 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-10 text-white shadow-2xl"
   aria-labelledby="resume-title"
 >
-  <div class="pointer-events-none absolute -bottom-24 -right-16 h-72 w-72 rounded-full bg-blue-500/30 blur-3xl"></div>
-  <div class="pointer-events-none absolute -top-32 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-indigo-500/20 blur-3xl"></div>
+  <div
+    class="pointer-events-none absolute -bottom-24 -right-16 h-72 w-72 rounded-full bg-blue-500/30 blur-3xl"
+  ></div>
+  <div
+    class="pointer-events-none absolute -top-32 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-indigo-500/20 blur-3xl"
+  ></div>
 
-  <div class="relative mx-auto flex max-w-5xl flex-col items-start gap-10 lg:flex-row lg:items-center lg:justify-between">
+  <div
+    class="relative mx-auto flex max-w-5xl flex-col items-start gap-10 lg:flex-row lg:items-center lg:justify-between"
+  >
     <div class="max-w-3xl">
       <p class="text-sm font-semibold uppercase tracking-[0.4em] text-blue-300">
-        {{ 'RESUME.PRETITLE' | translate }}
+        {{ "RESUME.PRETITLE" | translate }}
       </p>
-      <h2 id="resume-title" class="mt-4 text-3xl font-extrabold leading-tight md:text-4xl">
-        {{ 'RESUME.TITLE' | translate }}
+      <h2
+        id="resume-title"
+        class="mt-4 text-3xl font-extrabold leading-tight md:text-4xl"
+      >
+        {{ "RESUME.TITLE" | translate }}
       </h2>
       <p class="mt-4 text-lg leading-relaxed text-slate-200">
-        {{ 'RESUME.DESCRIPTION' | translate }}
+        {{ "RESUME.DESCRIPTION" | translate }}
       </p>
       <p class="mt-6 flex items-start gap-3 text-sm text-slate-300">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="mt-0.5 h-5 w-5">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          class="mt-0.5 h-5 w-5"
+        >
           <path
             stroke-linecap="round"
             stroke-linejoin="round"
@@ -25,14 +40,25 @@
             d="M12 6v12m0 0-3.75-3.75M12 18l3.75-3.75M5.25 9h.008v.008H5.25V9Zm0 3.75h.008v.008H5.25v-.008Zm0 3.75h.008v.008H5.25v-.008Zm13.5-7.5h.008v.008h-.008V9Zm0 3.75h.008v.008h-.008v-.008Zm0 3.75h.008v.008h-.008v-.008Z"
           />
         </svg>
-        <span>{{ 'RESUME.PRIVACY_NOTE' | translate }}</span>
+        <span>{{ "RESUME.PRIVACY_NOTE" | translate }}</span>
       </p>
     </div>
 
-    <div class="relative flex w-full max-w-sm flex-col items-stretch gap-4 rounded-2xl bg-white/10 p-6 text-left shadow-lg backdrop-blur">
+    <div
+      class="relative flex w-full max-w-sm flex-col items-stretch gap-4 rounded-2xl bg-white/10 p-6 text-left shadow-lg backdrop-blur"
+    >
       <div class="flex items-center gap-3 text-sm text-slate-200">
-        <span class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5">
+        <span
+          class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="h-5 w-5"
+          >
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -42,10 +68,10 @@
         </span>
         <div>
           <p class="text-xs uppercase tracking-[0.35em] text-blue-200">
-            {{ 'RESUME.BADGE' | translate }}
+            {{ "RESUME.BADGE" | translate }}
           </p>
           <p class="font-semibold text-white">
-            {{ 'RESUME.SUBTITLE' | translate }}
+            {{ "RESUME.SUBTITLE" | translate }}
           </p>
         </div>
       </div>
@@ -57,8 +83,14 @@
         download
         [attr.aria-label]="'RESUME.ACCESSIBLE_LABEL' | translate"
       >
-        <span>{{ 'RESUME.DOWNLOAD' | translate }}</span>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-5 w-5">
+        <span>{{ "RESUME.DOWNLOAD" | translate }}</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          class="h-5 w-5"
+        >
           <path
             stroke-linecap="round"
             stroke-linejoin="round"
@@ -68,7 +100,7 @@
         </svg>
       </a>
       <p class="text-xs text-slate-300">
-        {{ 'RESUME.SECONDARY_TEXT' | translate }}
+        {{ "RESUME.SECONDARY_TEXT" | translate }}
       </p>
     </div>
   </div>

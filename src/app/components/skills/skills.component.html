@@ -2,26 +2,45 @@
   class="relative overflow-hidden rounded-3xl border border-slate-200/70 bg-slate-50/60 p-10 shadow-xl shadow-slate-900/5 backdrop-blur dark:border-slate-800/60 dark:bg-slate-900/60"
   aria-labelledby="skills-title"
 >
-  <div class="pointer-events-none absolute inset-y-0 right-0 w-1/2 translate-x-1/4 bg-gradient-to-br from-blue-200/40 via-indigo-200/30 to-transparent blur-3xl dark:from-indigo-500/20 dark:via-purple-500/10"></div>
-  <div class="relative flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
+  <div
+    class="pointer-events-none absolute inset-y-0 right-0 w-1/2 translate-x-1/4 bg-gradient-to-br from-blue-200/40 via-indigo-200/30 to-transparent blur-3xl dark:from-indigo-500/20 dark:via-purple-500/10"
+  ></div>
+  <div
+    class="relative flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between"
+  >
     <div class="max-w-2xl">
-      <p class="text-sm font-semibold uppercase tracking-[0.45em] text-blue-500">
-        {{ 'SKILLS.PRETITLE' | translate }}
+      <p
+        class="text-sm font-semibold uppercase tracking-[0.45em] text-blue-500"
+      >
+        {{ "SKILLS.PRETITLE" | translate }}
       </p>
-      <h2 id="skills-title" class="mt-3 text-3xl font-extrabold text-slate-900 dark:text-white md:text-4xl">
-        {{ 'SKILLS.TITLE' | translate }}
+      <h2
+        id="skills-title"
+        class="mt-3 text-3xl font-extrabold text-slate-900 dark:text-white md:text-4xl"
+      >
+        {{ "SKILLS.TITLE" | translate }}
       </h2>
-      <p class="mt-4 text-lg leading-relaxed text-slate-600 dark:text-slate-300">
-        {{ 'SKILLS.DESCRIPTION' | translate }}
+      <p
+        class="mt-4 text-lg leading-relaxed text-slate-600 dark:text-slate-300"
+      >
+        {{ "SKILLS.DESCRIPTION" | translate }}
       </p>
     </div>
     <div class="lg:pt-3">
-      <div class="inline-flex items-center gap-3 rounded-full bg-white/80 px-4 py-3 text-sm font-medium text-slate-600 shadow-sm ring-1 ring-slate-200/80 dark:bg-slate-800/70 dark:text-slate-300 dark:ring-slate-700/80">
+      <div
+        class="inline-flex items-center gap-3 rounded-full bg-white/80 px-4 py-3 text-sm font-medium text-slate-600 shadow-sm ring-1 ring-slate-200/80 dark:bg-slate-800/70 dark:text-slate-300 dark:ring-slate-700/80"
+      >
         <span
           class="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-500 text-white shadow-lg"
           aria-hidden="true"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-6 w-6">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            class="h-6 w-6"
+          >
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -37,7 +56,7 @@
           </svg>
         </span>
         <span class="max-w-[14rem]">
-          {{ 'SKILLS.CALL_OUT' | translate }}
+          {{ "SKILLS.CALL_OUT" | translate }}
         </span>
       </div>
     </div>
@@ -49,20 +68,25 @@
         *ngFor="let skill of skills; trackBy: trackByCategory"
         class="group relative overflow-hidden rounded-2xl border border-slate-200/80 bg-white/80 px-6 py-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl dark:border-slate-700/70 dark:bg-slate-900/80"
       >
-        <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+        <div
+          class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+        ></div>
         <div class="flex items-start justify-between gap-4">
           <div>
             <h3 class="text-xl font-semibold text-slate-900 dark:text-white">
               {{ skill.categoryKey | translate }}
             </h3>
-            <p *ngIf="skill.descriptionKey" class="mt-2 text-sm text-slate-500 dark:text-slate-400">
+            <p
+              *ngIf="skill.descriptionKey"
+              class="mt-2 text-sm text-slate-500 dark:text-slate-400"
+            >
               {{ skill.descriptionKey | translate }}
             </p>
           </div>
           <span
             class="rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-blue-600 dark:bg-blue-900/40 dark:text-blue-200"
           >
-            {{ 'SKILLS.EXPERIENCE_BADGE' | translate }}
+            {{ "SKILLS.EXPERIENCE_BADGE" | translate }}
           </span>
         </div>
         <ul class="mt-5 flex flex-wrap gap-2.5">
@@ -80,16 +104,21 @@
 
   <ng-template #fallback>
     <div class="relative mt-10">
-      <div *ngIf="isLoading; else errorState" class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+      <div
+        *ngIf="isLoading; else errorState"
+        class="grid gap-6 md:grid-cols-2 xl:grid-cols-3"
+      >
         <div
           *ngFor="let placeholder of placeholders"
           class="h-44 animate-pulse rounded-2xl border border-slate-200/60 bg-white/60 dark:border-slate-700/60 dark:bg-slate-900/40"
         ></div>
       </div>
       <ng-template #errorState>
-        <div class="rounded-2xl border border-red-200/60 bg-red-50/80 px-6 py-8 text-center dark:border-red-900/40 dark:bg-red-950/60">
+        <div
+          class="rounded-2xl border border-red-200/60 bg-red-50/80 px-6 py-8 text-center dark:border-red-900/40 dark:bg-red-950/60"
+        >
           <p class="text-sm font-medium text-red-600 dark:text-red-200">
-            {{ 'SKILLS.ERROR' | translate }}
+            {{ "SKILLS.ERROR" | translate }}
           </p>
         </div>
       </ng-template>

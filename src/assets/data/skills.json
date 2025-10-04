@@ -13,11 +13,7 @@
   {
     "categoryKey": "SKILLS.CATEGORIES.BACKEND.TITLE",
     "descriptionKey": "SKILLS.CATEGORIES.BACKEND.DESCRIPTION",
-    "items": [
-      "SKILLS.ITEMS.NODE",
-      "SKILLS.ITEMS.EXPRESS",
-      "SKILLS.ITEMS.REST"
-    ]
+    "items": ["SKILLS.ITEMS.NODE", "SKILLS.ITEMS.EXPRESS", "SKILLS.ITEMS.REST"]
   },
   {
     "categoryKey": "SKILLS.CATEGORIES.TOOLS.TITLE",
