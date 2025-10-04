@@ -6,7 +6,7 @@
     <div class="flex justify-center mb-6">
       <img
         [src]="about.image"
-        [alt]="about.name"
+        [alt]="about.imageAltKey | translate"
         class="w-48 h-48 rounded-full object-cover border-4 border-orange-400 shadow-md"
       />
     </div>
@@ -15,17 +15,17 @@
     <h2
       class="text-3xl font-bold text-center text-gray-800 dark:text-gray-100 mb-2"
     >
-      {{ about.name }}
+      {{ about.nameKey | translate }}
     </h2>
     <p class="text-xl text-center text-gray-600 dark:text-gray-300 mb-4">
-      {{ about.role }}
+      {{ about.roleKey | translate }}
     </p>
 
     <!-- Opis -->
     <div
       class="text-gray-700 dark:text-gray-300 text-lg leading-relaxed space-y-4 font-sans"
     >
-      <p *ngFor="let para of about.description">{{ para }}</p>
+      <p *ngFor="let key of about.descriptionKeys">{{ key | translate }}</p>
     </div>
   </div>
 </div>
