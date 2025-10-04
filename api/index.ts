@@ -1,6 +1,6 @@
 import type { IncomingMessage, ServerResponse } from 'node:http';
 
-export type ExpressHandler = (req: IncomingMessage, res: ServerResponse) => void;
+type ExpressHandler = (req: IncomingMessage, res: ServerResponse) => void;
 
 let cachedHandler: ExpressHandler | null = null;
 
@@ -18,11 +18,13 @@ const loadHandler = async (): Promise<ExpressHandler> => {
   return cachedHandler;
 };
 
-export default async function handler(
+const handler = async (
   req: IncomingMessage,
   res: ServerResponse,
-): Promise<void> {
+): Promise<void> => {
   const app = await loadHandler();
 
-  return app(req, res);
-}
+  await app(req, res);
+};
+
+module.exports = handler;
