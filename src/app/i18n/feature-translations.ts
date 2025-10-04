@@ -1,4 +1,28 @@
 export const featureTranslationsEn = {
+  NAV: {
+    TAGLINE: 'Digital portfolio',
+    BRAND: 'Suad Ferizović',
+    ARIA: {
+      NAVIGATION: 'Primary navigation',
+      LANGUAGE: 'Change language',
+      LANGUAGE_SR: 'Switch site language to Serbian',
+      LANGUAGE_EN: 'Switch site language to English',
+    },
+    LINKS: {
+      HOME: 'Portfolio',
+      ABOUT: 'About',
+      CONTACT: 'Contact',
+    },
+  },
+  FOOTER: {
+    TAGLINE: 'Building thoughtful digital experiences',
+    COPYRIGHT: '© {{ year }} Suad Ferizović. All rights reserved.',
+    SOCIAL: {
+      GITHUB: 'GitHub profile',
+      LINKEDIN: 'LinkedIn profile',
+      EMAIL: 'Send me an email',
+    },
+  },
   HOME: {
     TAGLINE: 'Product-minded frontend engineer',
     TITLE: 'Welcome to my portfolio 🚀',
@@ -126,9 +150,108 @@ export const featureTranslationsEn = {
         'This very site—built as a component-driven Angular app with Tailwind theming and granular localization.',
     },
   },
+  ABOUT: {
+    PRETITLE: 'About',
+    TITLE: 'Meet the developer behind the work',
+    ROLE: 'Frontend engineer & product partner',
+    LOCATION: 'Sarajevo, Bosnia and Herzegovina',
+    INTRO:
+      'I design, code, and iterate on modern web products with a focus on accessible, maintainable interfaces that scale with your business.',
+    DESCRIPTIONS: {
+      P1: 'My background blends product thinking with frontend craft, which means I care deeply about both user experience and technical quality.',
+      P2: 'From landing pages to complex web apps, I work closely with stakeholders to translate ideas into shipped features using modern tooling.',
+      P3: 'I believe in continuous learning, clean architecture, and shipping value early while keeping an eye on long-term sustainability.',
+    },
+    HIGHLIGHTS: {
+      EXPERIENCE: {
+        TITLE: '5+ years honing the craft',
+        DESCRIPTION: 'Hands-on experience across freelance, startup, and agency environments with measurable product impact.',
+      },
+      COLLABORATION: {
+        TITLE: 'Collaborative teammate',
+        DESCRIPTION: 'Comfortable pairing with designers, product managers, and engineers to move projects forward smoothly.',
+      },
+      GROWTH: {
+        TITLE: 'Driven by growth',
+        DESCRIPTION: 'Always exploring new patterns, frameworks, and performance techniques to keep products future-ready.',
+      },
+    },
+    CTA: {
+      TITLE: 'Let’s collaborate',
+      DESCRIPTION: 'Have an idea or open role? I’m ready to help shape your next launch.',
+      BUTTON: 'Start a conversation',
+    },
+  },
+  CONTACT: {
+    PRETITLE: 'Contact',
+    TITLE: 'Let’s build something together',
+    DESCRIPTION:
+      'Fill out the form or reach out through the details below and I’ll get back to you within one business day.',
+    INFO: {
+      EMAIL: {
+        LABEL: 'Email',
+        VALUE: 'ferizovicsuco3@gmail.com',
+      },
+      LOCATION: {
+        LABEL: 'Location',
+        VALUE: 'Sarajevo, Bosnia and Herzegovina',
+      },
+      AVAILABILITY: {
+        LABEL: 'Availability',
+        VALUE: 'Open for new freelance projects',
+      },
+    },
+    STATUS: {
+      SUCCESS: 'Thanks for getting in touch! I will reply shortly.',
+      ERROR: 'Please correct the highlighted fields and try again.',
+    },
+    FORM: {
+      NAME: 'Full name',
+      EMAIL: 'Email address',
+      MESSAGE: 'Project details',
+      PLACEHOLDERS: {
+        NAME: 'How should I address you?',
+        EMAIL: 'name@example.com',
+        MESSAGE: 'Tell me about your idea, goals, or timeline…',
+      },
+    },
+    ERRORS: {
+      NAME_REQUIRED: 'Your name is required.',
+      NAME_MIN: 'Your name must be at least {{ min }} characters long.',
+      EMAIL_REQUIRED: 'An email address is required.',
+      EMAIL_INVALID: 'Please enter a valid email address.',
+      MESSAGE_REQUIRED: 'A brief message helps me prepare.',
+      MESSAGE_MIN: 'Your message should be at least {{ min }} characters.',
+    },
+    BUTTON: 'Send message',
+  },
 } as const;
 
 export const featureTranslationsSr = {
+  NAV: {
+    TAGLINE: 'Digitalni portfolio',
+    BRAND: 'Suad Ferizović',
+    ARIA: {
+      NAVIGATION: 'Glavna navigacija',
+      LANGUAGE: 'Promijeni jezik',
+      LANGUAGE_SR: 'Prebaci jezik sajta na srpski',
+      LANGUAGE_EN: 'Prebaci jezik sajta na engleski',
+    },
+    LINKS: {
+      HOME: 'Portfolio',
+      ABOUT: 'O meni',
+      CONTACT: 'Kontakt',
+    },
+  },
+  FOOTER: {
+    TAGLINE: 'Gradim promišljena digitalna iskustva',
+    COPYRIGHT: '© {{ year }} Suad Ferizović. Sva prava zadržana.',
+    SOCIAL: {
+      GITHUB: 'GitHub profil',
+      LINKEDIN: 'LinkedIn profil',
+      EMAIL: 'Pošalji mi e-poruku',
+    },
+  },
   HOME: {
     TAGLINE: 'Frontend inženjer fokusiran na proizvod',
     TITLE: 'Dobrodošli u moj portfolio 🚀',
@@ -255,5 +378,80 @@ export const featureTranslationsSr = {
       DESCRIPTION:
         'Ovaj sajt – komponentno vođen Angular projekat sa Tailwind temiranjem i potpunom lokalizacijom.',
     },
+  },
+  ABOUT: {
+    PRETITLE: 'O meni',
+    TITLE: 'Upoznajte developera iza projekata',
+    ROLE: 'Frontend inženjer i produkt partner',
+    LOCATION: 'Sarajevo, Bosna i Hercegovina',
+    INTRO:
+      'Dizajniram, razvijam i iteriram moderne web proizvode sa fokusom na pristupačne i održive interfejse koji rastu zajedno sa vašim biznisom.',
+    DESCRIPTIONS: {
+      P1: 'Spoj product razmišljanja i frontend zanata znači da podjednako brinem o korisničkom iskustvu i tehničkom kvalitetu.',
+      P2: 'Od landing stranica do kompleksnih web aplikacija, blisko sarađujem sa timom kako bismo ideje pretvorili u funkcionalnosti spremne za produkciju.',
+      P3: 'Vjerujem u kontinuirano učenje, čistu arhitekturu i isporuku vrijednosti rano, uz brigu o dugoročnoj održivosti.',
+    },
+    HIGHLIGHTS: {
+      EXPERIENCE: {
+        TITLE: '5+ godina usavršavanja',
+        DESCRIPTION: 'Iskustvo u freelance, startup i agencijskom okruženju uz mjerljiv uticaj na proizvode.',
+      },
+      COLLABORATION: {
+        TITLE: 'Timskih duha',
+        DESCRIPTION: 'Navikao na saradnju sa dizajnerima, produkt menadžerima i inženjerima kako bismo projekte vodili bez zastoja.',
+      },
+      GROWTH: {
+        TITLE: 'Vođen napretkom',
+        DESCRIPTION: 'Uvijek istražujem nove obrasce, okvire i tehnike performansi kako bi proizvodi ostali spremni za budućnost.',
+      },
+    },
+    CTA: {
+      TITLE: 'Hajde da sarađujemo',
+      DESCRIPTION: 'Imate ideju ili otvorenu poziciju? Spreman sam da pomognem oko narednog lansiranja.',
+      BUTTON: 'Započni razgovor',
+    },
+  },
+  CONTACT: {
+    PRETITLE: 'Kontakt',
+    TITLE: 'Hajde da napravimo nešto zajedno',
+    DESCRIPTION:
+      'Popunite formu ili koristite podatke ispod i odgovoriću vam u roku od jednog radnog dana.',
+    INFO: {
+      EMAIL: {
+        LABEL: 'E-pošta',
+        VALUE: 'ferizovicsuco3@gmail.com',
+      },
+      LOCATION: {
+        LABEL: 'Lokacija',
+        VALUE: 'Sarajevo, Bosna i Hercegovina',
+      },
+      AVAILABILITY: {
+        LABEL: 'Dostupnost',
+        VALUE: 'Otvoren za nove freelance projekte',
+      },
+    },
+    STATUS: {
+      SUCCESS: 'Hvala na poruci! Javiću vam se uskoro.',
+      ERROR: 'Ispravite označena polja i pokušajte ponovo.',
+    },
+    FORM: {
+      NAME: 'Ime i prezime',
+      EMAIL: 'E-mail adresa',
+      MESSAGE: 'Detalji projekta',
+      PLACEHOLDERS: {
+        NAME: 'Kako da vam se obratim?',
+        EMAIL: 'ime@primjer.com',
+        MESSAGE: 'Podijelite ideju, ciljeve ili vremenski okvir…',
+      },
+    },
+    ERRORS: {
+      NAME_REQUIRED: 'Ime je obavezno.',
+      NAME_MIN: 'Ime mora imati najmanje {{ min }} karaktera.',
+      EMAIL_REQUIRED: 'E-mail adresa je obavezna.',
+      EMAIL_INVALID: 'Unesite validnu e-mail adresu.',
+      MESSAGE_REQUIRED: 'Poruka će pomoći da se bolje pripremim.',
+      MESSAGE_MIN: 'Poruka treba da ima najmanje {{ min }} karaktera.',
+    },
+    BUTTON: 'Pošalji poruku',
   },
 } as const;
