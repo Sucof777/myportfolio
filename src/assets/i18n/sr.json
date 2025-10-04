@@ -1,17 +1,233 @@
 {
+  "NAV": {
+    "BRAND": "Sućo Ferizović",
+    "TAGLINE": "Frontend inženjer",
+    "LINKS": {
+      "HOME": "Početna",
+      "ABOUT": "O meni",
+      "CONTACT": "Kontakt"
+    },
+    "ARIA": {
+      "NAVIGATION": "Glavna navigacija",
+      "LANGUAGE": "Promijeni jezik",
+      "LANGUAGE_SR": "Prebaci na srpski",
+      "LANGUAGE_EN": "Prebaci na engleski"
+    }
+  },
+  "FOOTER": {
+    "TAGLINE": "Gradim digitalna iskustva koja inspirišu.",
+    "COPYRIGHT": "© {{year}} Sućo Ferizović. Sva prava zadržana.",
+    "SOCIAL": {
+      "GITHUB": "GitHub",
+      "LINKEDIN": "LinkedIn",
+      "EMAIL": "Email"
+    }
+  },
   "HOME": {
-    "TITLE": "Dobrodošli u moj portfolio 🚀",
-    "DESCRIPTION": "Ovdje možete pogledati neke od projekata koje sam razvijao tokom rada i učenja web developmenta. Svaki projekat ima svoj opis, live demo i link ka izvoru koda."
+    "TAGLINE": "Digitalno zanatstvo",
+    "TITLE": "Dizajniram i gradim prijatne web proizvode",
+    "DESCRIPTION": "Pomažem timovima da validiraju ideje, isporuče performantne frontend aplikacije i kreiraju pristupačna korisnička iskustva uz Angular, TypeScript i produktni način razmišljanja.",
+    "ACTION": "Započnimo saradnju",
+    "ACTION_ARIA": "Idi na sekciju sa kontaktom",
+    "SECONDARY_ACTION": "Pregledaj projekte",
+    "PROJECTS_TITLE": "Odabrani projekti",
+    "PROJECTS_DESCRIPTION": "Kolekcija projekata koji naglašavaju rješavanje problema, sistemsko razmišljanje i dorađeno korisničko iskustvo."
+  },
+  "PROJECT": {
+    "CARD": {
+      "FEATURED": "Izdvojeno",
+      "OPEN_SOURCE": "Open source"
+    },
+    "BUTTONS": {
+      "LIVE": "Otvori demo",
+      "LIVE_ARIA": "Otvori live demo u novoj kartici",
+      "SOURCE": "Izvorni kod",
+      "SOURCE_ARIA": "Otvori izvorni kod projekta u novoj kartici",
+      "MORE": "Saznaj više",
+      "MORE_ARIA": "Otvori dodatne detalje o projektu u novoj kartici"
+    }
+  },
+  "PROJECTS": {
+    "CAR_QUIZ": {
+      "TITLE": "Car quiz iskustvo",
+      "DESCRIPTION": "Interaktivna quiz platforma koja ljubiteljima automobila omogućava da testiraju znanje uz dinamičko bodovanje i povratne informacije u realnom vremenu."
+    },
+    "WEATHER_APP": {
+      "TITLE": "Vremenska kontrolna tabla",
+      "DESCRIPTION": "Responzivna weather aplikacija sa pretragom, prognozama po lokaciji i animiranim vizuelizacijama kreiranim u Angularu."
+    },
+    "PORTFOLIO": {
+      "TITLE": "Lični portfolio",
+      "DESCRIPTION": "Portfolio koji živi i prikazuje odabrane projekte, studije slučaja i proces isporuke digitalnih proizvoda."
+    }
   },
   "SKILLS": {
-    "TITLE": "Vještine"
+    "PRETITLE": "Kompetencije",
+    "TITLE": "Vještine koje donose rezultat",
+    "DESCRIPTION": "Pregled alata i principa na koje se oslanjam kako bih kreirao imerzivna, skalabilna i održiva web iskustva.",
+    "CALL_OUT": "Uvijek učim i unapređujem procese kako bih isporučio bolje proizvode.",
+    "EXPERIENCE_BADGE": "Ključna ekspertiza",
+    "ERROR": "Trenutno ne možemo da prikažemo vještine. Pokušajte ponovo kasnije.",
+    "CATEGORIES": {
+      "FRONTEND": {
+        "TITLE": "Frontend inženjering",
+        "DESCRIPTION": "Modularni dizajn sistemi, razvoj vođen komponentama i kontrola performansi."
+      },
+      "BACKEND": {
+        "TITLE": "Backend osnove",
+        "DESCRIPTION": "Dizajn API-ja, autentikacija i skalabilne Node.js usluge koje podržavaju interfejs."
+      },
+      "TOOLS": {
+        "TITLE": "Produktivnost i saradnja",
+        "DESCRIPTION": "Savremeni alati, automatizacija i jasna komunikacija u timu."
+      },
+      "TESTING": {
+        "TITLE": "Kultura testiranja",
+        "DESCRIPTION": "Pouzdane CI/CD linije sa unit, integracionim i end-to-end testovima."
+      },
+      "ARCHITECTURE": {
+        "TITLE": "Arhitektura i zanat",
+        "DESCRIPTION": "Praktični obrasci koji balansiraju fleksibilnost, čitljivost i održavanje."
+      }
+    },
+    "ITEMS": {
+      "ANGULAR": "Angular i Angular Universal",
+      "TYPESCRIPT": "TypeScript",
+      "RXJS": "RxJS",
+      "TAILWIND": "Tailwind CSS",
+      "HTML": "Semantički HTML",
+      "CSS": "Moderni CSS",
+      "NODE": "Node.js",
+      "EXPRESS": "Express",
+      "NEST": "NestJS",
+      "REST": "REST API-ji",
+      "GIT": "Git",
+      "GITHUB": "GitHub",
+      "JIRA": "Jira",
+      "DOCKER": "Docker",
+      "FIGMA": "Figma",
+      "JEST": "Jest",
+      "CYPRESS": "Cypress",
+      "PLAYWRIGHT": "Playwright",
+      "CLEAN_CODE": "Clean code principi",
+      "DDD": "Domain-driven design",
+      "ACCESSIBILITY": "Pristupačnost na prvom mjestu"
+    }
   },
   "EXPERIENCE": {
-    "TITLE": "Iskustvo"
+    "SUBTITLE": "Iskustvo",
+    "TITLE": "Put kontinuiranog učenja",
+    "DESCRIPTION": "Od freelance saradnji do agencijskih projekata, fokusiran sam na spajanje promišljenog UX-a sa stabilnim inženjerskim osnovama.",
+    "TIMELINE_LABEL": "Vremenska linija profesionalnog iskustva",
+    "ITEMS": {
+      "FREELANCE": {
+        "PERIOD": "2019 – danas",
+        "HIGHLIGHT": "Remote",
+        "ROLE": "Freelance frontend inženjer",
+        "COMPANY": "Samostalno",
+        "DESCRIPTION": "Dizajnirao sam i razvijao prilagođene korisničke interfejse i pomagao klijentima da brzo validiraju ideje i lansiraju MVP verzije.",
+        "RESULT": "Isporučeno više od 15 projekata za startape i nevladine organizacije."
+      },
+      "STARTUP": {
+        "PERIOD": "2021 – 2023",
+        "HIGHLIGHT": "Proizvod",
+        "ROLE": "Lead Angular developer",
+        "COMPANY": "Startap fokusiran na rast",
+        "DESCRIPTION": "Vodio sam frontend arhitekturu, uveo dizajn sistem i unaprijedio developer iskustvo kroz optimizovane CI/CD procese.",
+        "RESULT": "Ubrzao isporuku za 40% uz značajno manje regresija."
+      },
+      "AGENCY": {
+        "PERIOD": "2023 – danas",
+        "HIGHLIGHT": "Saradnja",
+        "ROLE": "Frontend konsultant",
+        "COMPANY": "Digitalne agencije partneri",
+        "DESCRIPTION": "Sarađivao sa multidisciplinarnim timovima na izgradnji pristupačnih rješenja za finansijski, obrazovni i e-commerce sektor.",
+        "RESULT": "Kreirao biblioteke komponenti koje koriste 4 produkt tima."
+      }
+    }
   },
   "RESUME": {
+    "PRETITLE": "Curriculum vitae",
     "TITLE": "Preuzmite moj CV",
-    "DESCRIPTION": "Pogledajte moj CV za više detalja o iskustvu i vještinama.",
-    "DOWNLOAD": "Preuzmi CV"
+    "DESCRIPTION": "Detaljnije upoznajte moje iskustvo, projekte i angažman u zajednici.",
+    "PRIVACY_NOTE": "Dokument je dostupan kao PDF za preuzimanje. Vaši podaci ostaju privatni.",
+    "BADGE": "Ažurirano",
+    "SUBTITLE": "Osvježeno ovog mjeseca",
+    "DOWNLOAD": "Preuzmi CV",
+    "ACCESSIBLE_LABEL": "Preuzmi kopiju mog CV-ja",
+    "SECONDARY_TEXT": "Treba vam prilagođena verzija? Javite se i rado ću je pripremiti."
+  },
+  "ABOUT": {
+    "PRETITLE": "O meni",
+    "TITLE": "Upoznaj osobu iza piksela",
+    "ROLE": "Frontend inženjer i UI entuzijasta",
+    "LOCATION": "Sa sjedištem u Bosni i Hercegovini",
+    "INTRO": "Zdravo, ja sam Sućo — developer usmjeren na proizvod koji spaja osjećaj za dizajn sa pouzdanim inženjeringom.",
+    "DESCRIPTIONS": {
+      "P1": "Uživam u pretvaranju složenih zahtjeva u prijatne i brze interfejse. Angular, TypeScript i moderni CSS su alati kojima gradim skalabilne sisteme.",
+      "P2": "Posljednjih godina sarađivao sam sa osnivačima, agencijama i internim timovima na prototipovima, bibliotekama komponenti i optimizaciji postojećih proizvoda.",
+      "P3": "Kada ne pišem kod, istražujem UX obrasce, doprinosim open-source projektima ili dijelim znanje sa zajednicom."
+    },
+    "HIGHLIGHTS": {
+      "EXPERIENCE": {
+        "TITLE": "Produktni fokus",
+        "DESCRIPTION": "Važni su mi mjerljivi rezultati, ne samo isporuka."
+      },
+      "COLLABORATION": {
+        "TITLE": "Partner za saradnju",
+        "DESCRIPTION": "Volim da radim rame uz rame sa dizajnerima i backend timovima."
+      },
+      "GROWTH": {
+        "TITLE": "Stalno napredovanje",
+        "DESCRIPTION": "Ulažem vrijeme u unapređenje procesa i učenje novih alata."
+      }
+    },
+    "CTA": {
+      "TITLE": "Imate ideju ili projekat?",
+      "DESCRIPTION": "Hajde da porazgovaramo kako da ga pretvorimo u iskustvo koje oduševljava.",
+      "BUTTON": "Kontaktiraj me"
+    }
+  },
+  "CONTACT": {
+    "PRETITLE": "Hajde da se povežemo",
+    "TITLE": "Ispričajte mi o svom projektu",
+    "DESCRIPTION": "Podijelite nekoliko detalja o onome što gradite i javiću se u roku od jednog radnog dana.",
+    "INFO": {
+      "EMAIL": {
+        "LABEL": "Email",
+        "VALUE": "ferizovicsuco3@gmail.com"
+      },
+      "LOCATION": {
+        "LABEL": "Lokacija",
+        "VALUE": "Tuzla, Bosna i Hercegovina"
+      },
+      "AVAILABILITY": {
+        "LABEL": "Dostupnost",
+        "VALUE": "Otvoren za freelance i remote saradnje"
+      }
+    },
+    "FORM": {
+      "NAME": "Ime i prezime",
+      "EMAIL": "Email adresa",
+      "MESSAGE": "Detalji projekta",
+      "PLACEHOLDERS": {
+        "NAME": "Kako da vam se obratim?",
+        "EMAIL": "vas@email.com",
+        "MESSAGE": "Podijelite izazove koje želite da riješimo..."
+      }
+    },
+    "BUTTON": "Pošalji poruku",
+    "STATUS": {
+      "SUCCESS": "Hvala! Vaša poruka je poslata. Uskoro se javljam.",
+      "ERROR": "Provjerite označena polja i pokušajte ponovo."
+    },
+    "ERRORS": {
+      "NAME_REQUIRED": "Unesite svoje ime.",
+      "NAME_MIN": "Ime mora imati najmanje {{min}} karaktera.",
+      "EMAIL_REQUIRED": "Unesite email adresu.",
+      "EMAIL_INVALID": "Izgleda da email nije validan.",
+      "MESSAGE_REQUIRED": "Napišite kratku poruku.",
+      "MESSAGE_MIN": "Poruka mora imati najmanje {{min}} karaktera."
+    }
   }
 }

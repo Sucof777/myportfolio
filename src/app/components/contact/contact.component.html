@@ -1,39 +1,258 @@
-<div class="flex justify-center mt-10">
-  <div class="max-w-xl w-full bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 p-6">
+<section
+  id="contact"
+  class="relative isolate overflow-hidden rounded-3xl border border-slate-200/70 bg-gradient-to-br from-white via-white to-slate-50 px-6 py-16 shadow-xl shadow-slate-900/5 backdrop-blur dark:border-slate-800/60 dark:from-slate-950 dark:via-slate-950 dark:to-slate-900"
+  aria-labelledby="contact-title"
+>
+  <div
+    class="pointer-events-none absolute -top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-blue-500/20 blur-3xl"
+  ></div>
+  <div
+    class="pointer-events-none absolute -bottom-16 right-16 h-60 w-60 rounded-full bg-purple-500/10 blur-3xl"
+  ></div>
 
-    <h2 class="text-3xl font-bold text-center text-gray-800 dark:text-gray-100 mb-6">Contact Me</h2>
+  <div class="relative mx-auto max-w-6xl">
+    <div class="grid gap-10 lg:grid-cols-[minmax(0,360px),minmax(0,1fr)] lg:items-start">
+      <aside class="flex flex-col gap-8 rounded-3xl border border-slate-200/70 bg-white/80 p-8 shadow-lg dark:border-slate-700/70 dark:bg-slate-900/70">
+        <div class="space-y-4">
+          <p class="text-sm font-semibold uppercase tracking-[0.45em] text-blue-500">
+            {{ 'CONTACT.PRETITLE' | translate }}
+          </p>
+          <h2 id="contact-title" class="text-3xl font-extrabold text-slate-900 dark:text-white">
+            {{ 'CONTACT.TITLE' | translate }}
+          </h2>
+          <p class="text-base leading-relaxed text-slate-600 dark:text-slate-300">
+            {{ 'CONTACT.DESCRIPTION' | translate }}
+          </p>
+        </div>
 
-    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="space-y-4">
+        <ul class="space-y-4">
+          <li
+            *ngFor="let info of contactInfo; trackBy: trackByInfo"
+            class="flex items-start gap-4 rounded-2xl border border-slate-200/80 bg-white/80 p-4 shadow-sm dark:border-slate-700/70 dark:bg-slate-900/70"
+          >
+            <span
+              class="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-500 text-white shadow"
+              aria-hidden="true"
+            >
+              <ng-container [ngSwitch]="info.icon">
+                <svg
+                  *ngSwitchCase="'mail'"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  class="h-5 w-5"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m21.75 7.5-9.45 5.67a1.5 1.5 0 0 1-1.5 0L1.35 7.5"
+                  />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 6H3a1.5 1.5 0 0 0-1.5 1.5v9A1.5 1.5 0 0 0 3 18h18a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 21 6Z"
+                  />
+                </svg>
+                <svg
+                  *ngSwitchCase="'location'"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  class="h-5 w-5"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 21.75S4.5 17.25 4.5 10.5a7.5 7.5 0 0 1 15 0c0 6.75-7.5 11.25-7.5 11.25Z"
+                  />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                  />
+                </svg>
+                <svg
+                  *ngSwitchDefault
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  class="h-5 w-5"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M3 6.75h18M3 12h18M6.75 6.75v12.75"
+                  />
+                </svg>
+              </ng-container>
+            </span>
+            <div class="space-y-1 text-sm">
+              <p class="font-semibold uppercase tracking-widest text-slate-500 dark:text-slate-400">
+                {{ info.labelKey | translate }}
+              </p>
+              <a
+                *ngIf="info.href; else plainText"
+                [href]="info.href"
+                class="text-base font-medium text-slate-900 underline decoration-blue-400 decoration-dotted underline-offset-4 transition hover:text-blue-600 dark:text-white dark:hover:text-blue-300"
+              >
+                {{ info.valueKey | translate }}
+              </a>
+              <ng-template #plainText>
+                <p class="text-base font-medium text-slate-900 dark:text-white">
+                  {{ info.valueKey | translate }}
+                </p>
+              </ng-template>
+            </div>
+          </li>
+        </ul>
+      </aside>
 
-      <!-- Name -->
-      <div>
-        <label class="block text-gray-700 dark:text-gray-300 mb-1">Name</label>
-        <input formControlName="name" type="text" placeholder="Your Name"
-          class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-400 focus:outline-none"/>
-      </div>
+      <form
+        [formGroup]="contactForm"
+        (ngSubmit)="onSubmit()"
+        class="space-y-6 rounded-3xl border border-slate-200/70 bg-white/90 p-8 shadow-lg backdrop-blur dark:border-slate-700/70 dark:bg-slate-900/70"
+        novalidate
+        [attr.aria-describedby]="status === 'error' ? 'contact-status' : null"
+      >
+        <div *ngIf="status === 'success'" class="rounded-2xl border border-emerald-200/80 bg-emerald-50/80 px-4 py-3 text-sm font-medium text-emerald-600 dark:border-emerald-500/40 dark:bg-emerald-500/10 dark:text-emerald-200">
+          {{ 'CONTACT.STATUS.SUCCESS' | translate }}
+        </div>
+        <div
+          *ngIf="status === 'error'"
+          id="contact-status"
+          class="rounded-2xl border border-red-200/80 bg-red-50/80 px-4 py-3 text-sm font-medium text-red-600 dark:border-red-500/40 dark:bg-red-500/10 dark:text-red-200"
+        >
+          {{ 'CONTACT.STATUS.ERROR' | translate }}
+        </div>
 
-      <!-- Email -->
-      <div>
-        <label class="block text-gray-700 dark:text-gray-300 mb-1">Email</label>
-        <input formControlName="email" type="email" placeholder="Your Email"
-          class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-400 focus:outline-none"/>
-      </div>
+        <div class="space-y-2">
+          <label for="contact-name" class="text-sm font-semibold text-slate-700 dark:text-slate-200">
+            {{ 'CONTACT.FORM.NAME' | translate }}
+          </label>
+          <div class="relative">
+            <input
+              id="contact-name"
+              type="text"
+              formControlName="name"
+              [placeholder]="'CONTACT.FORM.PLACEHOLDERS.NAME' | translate"
+              class="w-full rounded-2xl border border-slate-200/80 bg-white px-4 py-3 text-base text-slate-900 shadow-sm transition focus:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-200 dark:border-slate-700/70 dark:bg-slate-900/70 dark:text-white"
+              [ngClass]="{
+                'border-red-400 focus:border-red-400 focus:ring-red-200': nameControl?.invalid && nameControl?.touched
+              }"
+              [attr.aria-invalid]="nameControl?.invalid && nameControl?.touched"
+              [attr.aria-describedby]="
+                nameControl?.invalid && nameControl?.touched ? 'contact-name-error' : null
+              "
+            />
+          </div>
+          <div
+            *ngIf="nameControl?.invalid && nameControl?.touched"
+            id="contact-name-error"
+            class="space-y-1 text-sm text-red-600 dark:text-red-300"
+          >
+            <p *ngIf="nameControl?.hasError('required')">
+              {{ 'CONTACT.ERRORS.NAME_REQUIRED' | translate }}
+            </p>
+            <p *ngIf="nameControl?.hasError('minlength')">
+              {{ 'CONTACT.ERRORS.NAME_MIN' | translate: { min: nameMinLength } }}
+            </p>
+          </div>
+        </div>
 
-      <!-- Message -->
-      <div>
-        <label class="block text-gray-700 dark:text-gray-300 mb-1">Message</label>
-        <textarea formControlName="message" rows="5" placeholder="Your Message"
-          class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-400 focus:outline-none"></textarea>
-      </div>
+        <div class="space-y-2">
+          <label for="contact-email" class="text-sm font-semibold text-slate-700 dark:text-slate-200">
+            {{ 'CONTACT.FORM.EMAIL' | translate }}
+          </label>
+          <div class="relative">
+            <input
+              id="contact-email"
+              type="email"
+              formControlName="email"
+              [placeholder]="'CONTACT.FORM.PLACEHOLDERS.EMAIL' | translate"
+              class="w-full rounded-2xl border border-slate-200/80 bg-white px-4 py-3 text-base text-slate-900 shadow-sm transition focus:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-200 dark:border-slate-700/70 dark:bg-slate-900/70 dark:text-white"
+              [ngClass]="{
+                'border-red-400 focus:border-red-400 focus:ring-red-200': emailControl?.invalid && emailControl?.touched
+              }"
+              [attr.aria-invalid]="emailControl?.invalid && emailControl?.touched"
+              [attr.aria-describedby]="
+                emailControl?.invalid && emailControl?.touched ? 'contact-email-error' : null
+              "
+            />
+          </div>
+          <div
+            *ngIf="emailControl?.invalid && emailControl?.touched"
+            id="contact-email-error"
+            class="space-y-1 text-sm text-red-600 dark:text-red-300"
+          >
+            <p *ngIf="emailControl?.hasError('required')">
+              {{ 'CONTACT.ERRORS.EMAIL_REQUIRED' | translate }}
+            </p>
+            <p *ngIf="emailControl?.hasError('email')">
+              {{ 'CONTACT.ERRORS.EMAIL_INVALID' | translate }}
+            </p>
+          </div>
+        </div>
 
-      <!-- Submit Button -->
-      <div class="flex justify-center">
-        <button type="submit"
-          class="bg-orange-400 text-white px-6 py-3 rounded-lg hover:bg-orange-500 transition-colors duration-300 font-semibold">
-          Send Message
-        </button>
-      </div>
+        <div class="space-y-2">
+          <label for="contact-message" class="text-sm font-semibold text-slate-700 dark:text-slate-200">
+            {{ 'CONTACT.FORM.MESSAGE' | translate }}
+          </label>
+          <div class="relative">
+            <textarea
+              id="contact-message"
+              rows="6"
+              formControlName="message"
+              [placeholder]="'CONTACT.FORM.PLACEHOLDERS.MESSAGE' | translate"
+              class="w-full rounded-2xl border border-slate-200/80 bg-white px-4 py-3 text-base text-slate-900 shadow-sm transition focus:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-200 dark:border-slate-700/70 dark:bg-slate-900/70 dark:text-white"
+              [ngClass]="{
+                'border-red-400 focus:border-red-400 focus:ring-red-200': messageControl?.invalid && messageControl?.touched
+              }"
+              [attr.aria-invalid]="messageControl?.invalid && messageControl?.touched"
+              [attr.aria-describedby]="
+                messageControl?.invalid && messageControl?.touched ? 'contact-message-error' : null
+              "
+            ></textarea>
+          </div>
+          <div
+            *ngIf="messageControl?.invalid && messageControl?.touched"
+            id="contact-message-error"
+            class="space-y-1 text-sm text-red-600 dark:text-red-300"
+          >
+            <p *ngIf="messageControl?.hasError('required')">
+              {{ 'CONTACT.ERRORS.MESSAGE_REQUIRED' | translate }}
+            </p>
+            <p *ngIf="messageControl?.hasError('minlength')">
+              {{ 'CONTACT.ERRORS.MESSAGE_MIN' | translate: { min: messageMinLength } }}
+            </p>
+          </div>
+        </div>
 
-    </form>
+        <div class="flex justify-end">
+          <button
+            type="submit"
+            class="inline-flex items-center gap-2 rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white shadow transition hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900 dark:bg-blue-600 dark:hover:bg-blue-500"
+          >
+            {{ 'CONTACT.BUTTON' | translate }}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              class="h-4 w-4"
+              aria-hidden="true"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0-6-6m6 6-6 6" />
+            </svg>
+          </button>
+        </div>
+      </form>
+    </div>
   </div>
-</div>
+</section>
