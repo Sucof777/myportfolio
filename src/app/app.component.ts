@@ -18,18 +18,6 @@ type SocialLink = {
   label: string;
 };
 
-type NavLink = {
-  path: string;
-  label: string;
-  exact?: boolean;
-};
-
-type SocialLink = {
-  icon: 'github' | 'linkedin' | 'mail';
-  href: string;
-  label: string;
-};
-
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -88,11 +76,4 @@ export class AppComponent {
     return link.href;
   }
 
-  trackByNav(_: number, link: NavLink): string {
-    return link.path;
-  }
-
-  trackBySocial(_: number, link: SocialLink): string {
-    return link.href;
-  }
 }
