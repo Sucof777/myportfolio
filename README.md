@@ -4,13 +4,15 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 
 ## Development server
 
-To start a local development server, run:
+The Angular application and the Express API can be started together with:
 
 ```bash
-ng serve
+npm run dev
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+This command launches the Express server on `http://localhost:4000` (with SSR disabled for faster rebuilds) and the Angular CLI dev server on `http://localhost:4200`. A proxy configuration forwards `/api` requests from the Angular server to the Express instance so the frontend can call the backend without changing URLs. Both processes reload automatically when their source files change.
+
+To run just the Angular application, use `npm start`. To work with the API in isolation, run `npm run serve:api` and send requests to `http://localhost:4000`.
 
 ## Code scaffolding
 
@@ -65,7 +67,19 @@ The `/api/contact` endpoint forwards messages through SMTP using [Nodemailer](ht
 | `CONTACT_FROM_ADDRESS` | No | Explicit “from” address (defaults to the SMTP user or the sender email). |
 | `CONTACT_TRANSPORT` | No | Set to `json` to use Nodemailer's JSON transport (useful for local testing). |
 
-When running tests you can set `CONTACT_TRANSPORT=json` to avoid connecting to a real SMTP server.
+When running tests you can set `CONTACT_TRANSPORT=json` to avoid connecting to a real SMTP server. The development API script (`npm run serve:api`) sets this flag automatically so the `/api/contact` endpoint responds with HTTP 202 during local development.
+
+### Verifying the contact form locally
+
+With the development servers running (`npm run dev`), submit the contact form from the UI or issue a manual request:
+
+```bash
+curl -i -X POST http://localhost:4200/api/contact \
+  -H 'Content-Type: application/json' \
+  -d '{"name":"Jane Tester","email":"jane@example.com","message":"This is a message long enough to be accepted."}'
+```
+
+The proxy forwards the request to the Express server which responds with status `202 Accepted` and the JSON payload `{ "message": "Message sent." }` when the payload is valid.
 
 ## Running end-to-end tests
 

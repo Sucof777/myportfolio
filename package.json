@@ -3,12 +3,14 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --proxy-config proxy.conf.json",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "test:server": "tsc --project tsconfig.server-test.json && node --test .tmp/server-tests/tests/server/contact-endpoint.spec.js",
-    "serve:ssr:portfolio": "node dist/portfolio/server/server.mjs"
+    "serve:ssr:portfolio": "node dist/portfolio/server/server.mjs",
+    "serve:api": "node scripts/serve-api.mjs",
+    "dev": "node scripts/dev.mjs"
   },
   "private": true,
   "dependencies": {
