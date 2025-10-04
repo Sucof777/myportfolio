@@ -44,6 +44,29 @@ To execute unit tests with the [Karma](https://karma-runner.github.io) test runn
 ng test
 ```
 
+Server-side API tests are implemented with Node's test runner. Execute them with:
+
+```bash
+npm run test:server
+```
+
+## Contact API configuration
+
+The `/api/contact` endpoint forwards messages through SMTP using [Nodemailer](https://nodemailer.com/). Configure the following environment variables before starting the server:
+
+| Variable | Required | Description |
+| --- | --- | --- |
+| `CONTACT_SMTP_HOST` | Yes (unless `CONTACT_TRANSPORT=json`) | SMTP server host name. |
+| `CONTACT_SMTP_PORT` | No | SMTP port (defaults to `587`). |
+| `CONTACT_SMTP_SECURE` | No | Set to `true` to enforce SMTPS (defaults based on port). |
+| `CONTACT_SMTP_USER` | Yes (unless `CONTACT_TRANSPORT=json`) | SMTP username. |
+| `CONTACT_SMTP_PASS` | Yes (unless `CONTACT_TRANSPORT=json`) | SMTP password. |
+| `CONTACT_RECIPIENT` | No | Override the email recipient (defaults to `ferizovicsuco3@gmail.com`). |
+| `CONTACT_FROM_ADDRESS` | No | Explicit “from” address (defaults to the SMTP user or the sender email). |
+| `CONTACT_TRANSPORT` | No | Set to `json` to use Nodemailer's JSON transport (useful for local testing). |
+
+When running tests you can set `CONTACT_TRANSPORT=json` to avoid connecting to a real SMTP server.
+
 ## Running end-to-end tests
 
 For end-to-end (e2e) testing, run:

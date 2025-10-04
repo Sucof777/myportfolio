@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./.tmp/server-tests",
+    "moduleResolution": "node",
+    "module": "ES2022",
+    "target": "ES2022",
+    "rootDir": "./",
+    "types": ["node"],
+    "noEmitOnError": true
+  },
+  "include": ["src/server.ts", "tests/server/**/*.ts"]
+}

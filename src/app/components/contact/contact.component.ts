@@ -7,6 +7,9 @@ import {
   Validators,
 } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
+import { finalize } from 'rxjs';
+
+import { ContactService } from '../../services/contact.service';
 
 type ContactInfo = {
   icon: 'mail' | 'location' | 'calendar';
@@ -27,6 +30,7 @@ export class ContactComponent {
   readonly messageMinLength = 20;
   readonly contactForm: FormGroup;
   status: 'success' | 'error' | null = null;
+  submitting = false;
 
   readonly contactInfo: readonly ContactInfo[] = [
     {
@@ -47,7 +51,10 @@ export class ContactComponent {
     },
   ];
 
-  constructor(private readonly formBuilder: FormBuilder) {
+  constructor(
+    private readonly formBuilder: FormBuilder,
+    private readonly contactService: ContactService,
+  ) {
     this.contactForm = this.formBuilder.group({
       name: ['', [Validators.required, Validators.minLength(this.nameMinLength)]],
       email: ['', [Validators.required, Validators.email]],
@@ -72,13 +79,36 @@ export class ContactComponent {
   }
 
   onSubmit(): void {
+    if (this.submitting) {
+      return;
+    }
+
     if (this.contactForm.invalid) {
       this.status = 'error';
       this.contactForm.markAllAsTouched();
       return;
     }
 
-    this.status = 'success';
-    this.contactForm.reset();
+    this.status = null;
+    this.submitting = true;
+
+    const { name, email, message } = this.contactForm.getRawValue();
+
+    this.contactService
+      .sendMessage({
+        name,
+        email,
+        message,
+      })
+      .pipe(finalize(() => (this.submitting = false)))
+      .subscribe({
+        next: () => {
+          this.status = 'success';
+          this.contactForm.reset();
+        },
+        error: () => {
+          this.status = 'error';
+        },
+      });
   }
 }

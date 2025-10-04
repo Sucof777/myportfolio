@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'portfolio' title`, () => {
+  it('should expose navigation links', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('portfolio');
+    expect(app.navLinks.length).toBeGreaterThan(0);
+    expect(app.navLinks.some((link) => link.path === '/contact')).toBeTrue();
   });
 
-  it('should render title', () => {
+  it('should expose social links', () => {
     const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, portfolio');
+    const app = fixture.componentInstance;
+    expect(app.socialLinks.some((link) => link.icon === 'mail')).toBeTrue();
   });
 });
