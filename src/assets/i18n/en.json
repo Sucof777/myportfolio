@@ -1,17 +1,233 @@
 {
+  "NAV": {
+    "BRAND": "Sućo Ferizović",
+    "TAGLINE": "Frontend engineer",
+    "LINKS": {
+      "HOME": "Home",
+      "ABOUT": "About",
+      "CONTACT": "Contact"
+    },
+    "ARIA": {
+      "NAVIGATION": "Main navigation",
+      "LANGUAGE": "Change language",
+      "LANGUAGE_SR": "Switch to Serbian",
+      "LANGUAGE_EN": "Switch to English"
+    }
+  },
+  "FOOTER": {
+    "TAGLINE": "Building engaging digital experiences.",
+    "COPYRIGHT": "© {{year}} Sućo Ferizović. All rights reserved.",
+    "SOCIAL": {
+      "GITHUB": "GitHub",
+      "LINKEDIN": "LinkedIn",
+      "EMAIL": "Email"
+    }
+  },
   "HOME": {
-    "TITLE": "Welcome to my portfolio 🚀",
-    "DESCRIPTION": "Here you can explore some of the projects I developed while working and learning web development. Each project has its own description, live demo, and link to the source code."
+    "TAGLINE": "Digital craftsmanship",
+    "TITLE": "Designing and building delightful web products",
+    "DESCRIPTION": "I help teams validate ideas, ship performant frontends, and craft accessible user journeys with Angular, TypeScript, and a product mindset.",
+    "ACTION": "Let's work together",
+    "ACTION_ARIA": "Jump to the contact section",
+    "SECONDARY_ACTION": "Explore recent work",
+    "PROJECTS_TITLE": "Selected projects",
+    "PROJECTS_DESCRIPTION": "A curated list of projects that highlight problem solving, system thinking, and polished user experiences."
+  },
+  "PROJECT": {
+    "CARD": {
+      "FEATURED": "Featured",
+      "OPEN_SOURCE": "Open source"
+    },
+    "BUTTONS": {
+      "LIVE": "View live",
+      "LIVE_ARIA": "Open live demo in a new tab",
+      "SOURCE": "Source code",
+      "SOURCE_ARIA": "Open project source code in a new tab",
+      "MORE": "Read more",
+      "MORE_ARIA": "Open additional project details in a new tab"
+    }
+  },
+  "PROJECTS": {
+    "CAR_QUIZ": {
+      "TITLE": "Car quiz experience",
+      "DESCRIPTION": "Interactive quiz platform that helps car enthusiasts test their knowledge with dynamic scoring and real-time feedback."
+    },
+    "WEATHER_APP": {
+      "TITLE": "Weather insights dashboard",
+      "DESCRIPTION": "Responsive weather application with search, location-based forecasts, and animated visualisations built with Angular."
+    },
+    "PORTFOLIO": {
+      "TITLE": "Personal portfolio",
+      "DESCRIPTION": "A living portfolio showcasing selected projects, case studies, and the process behind delivering digital products."
+    }
   },
   "SKILLS": {
-    "TITLE": "Skills"
+    "PRETITLE": "Capabilities",
+    "TITLE": "Skills that deliver impact",
+    "DESCRIPTION": "A snapshot of the tools and principles I rely on to craft immersive, scalable, and maintainable web experiences.",
+    "CALL_OUT": "Always learning and iterating to ship better experiences.",
+    "EXPERIENCE_BADGE": "Core expertise",
+    "ERROR": "We couldn't load the skills right now. Please try again later.",
+    "CATEGORIES": {
+      "FRONTEND": {
+        "TITLE": "Frontend engineering",
+        "DESCRIPTION": "Modular design systems, component-driven development, and performance budgets."
+      },
+      "BACKEND": {
+        "TITLE": "Backend fundamentals",
+        "DESCRIPTION": "API design, authentication, and scalable Node.js services to support the UI."
+      },
+      "TOOLS": {
+        "TITLE": "Productivity & collaboration",
+        "DESCRIPTION": "Modern tooling, automation, and effective communication across teams."
+      },
+      "TESTING": {
+        "TITLE": "Testing culture",
+        "DESCRIPTION": "Reliable pipelines with unit, integration, and end-to-end coverage."
+      },
+      "ARCHITECTURE": {
+        "TITLE": "Architecture & craft",
+        "DESCRIPTION": "Opinionated patterns that balance flexibility, readability, and long-term maintenance."
+      }
+    },
+    "ITEMS": {
+      "ANGULAR": "Angular & Angular Universal",
+      "TYPESCRIPT": "TypeScript",
+      "RXJS": "RxJS",
+      "TAILWIND": "Tailwind CSS",
+      "HTML": "Semantic HTML",
+      "CSS": "Modern CSS",
+      "NODE": "Node.js",
+      "EXPRESS": "Express",
+      "NEST": "NestJS",
+      "REST": "REST APIs",
+      "GIT": "Git",
+      "GITHUB": "GitHub",
+      "JIRA": "Jira",
+      "DOCKER": "Docker",
+      "FIGMA": "Figma",
+      "JEST": "Jest",
+      "CYPRESS": "Cypress",
+      "PLAYWRIGHT": "Playwright",
+      "CLEAN_CODE": "Clean code practices",
+      "DDD": "Domain-driven design",
+      "ACCESSIBILITY": "Accessibility-first mindset"
+    }
   },
   "EXPERIENCE": {
-    "TITLE": "Experience"
+    "SUBTITLE": "Experience",
+    "TITLE": "A journey of continuous learning",
+    "DESCRIPTION": "From freelance collaborations to agency partnerships, I focus on pairing thoughtful UX with stable engineering foundations.",
+    "TIMELINE_LABEL": "Timeline of professional experience",
+    "ITEMS": {
+      "FREELANCE": {
+        "PERIOD": "2019 – Present",
+        "HIGHLIGHT": "Remote",
+        "ROLE": "Freelance frontend engineer",
+        "COMPANY": "Independent",
+        "DESCRIPTION": "Designed and developed bespoke user interfaces, helping clients validate ideas and launch MVPs quickly.",
+        "RESULT": "Delivered 15+ projects for startups and NGOs."
+      },
+      "STARTUP": {
+        "PERIOD": "2021 – 2023",
+        "HIGHLIGHT": "Product",
+        "ROLE": "Lead Angular developer",
+        "COMPANY": "Growth-focused startup",
+        "DESCRIPTION": "Led the frontend architecture, introduced design systems, and improved DX by streamlining CI/CD workflows.",
+        "RESULT": "Improved release cadence by 40% while cutting regressions in half."
+      },
+      "AGENCY": {
+        "PERIOD": "2023 – Present",
+        "HIGHLIGHT": "Collaboration",
+        "ROLE": "Frontend consultant",
+        "COMPANY": "Digital agency partners",
+        "DESCRIPTION": "Partnered with multidisciplinary teams to build accessible experiences for finance, education, and e-commerce clients.",
+        "RESULT": "Shipped reusable component libraries adopted across 4 product teams."
+      }
+    }
   },
   "RESUME": {
+    "PRETITLE": "Curriculum vitae",
     "TITLE": "Download my CV",
-    "DESCRIPTION": "Take a look at my resume for more details about my experience and skills.",
-    "DOWNLOAD": "Download CV"
+    "DESCRIPTION": "Dig into my experience, side projects, and community involvement in more detail.",
+    "PRIVACY_NOTE": "The document is provided as a downloadable PDF. Your information stays private.",
+    "BADGE": "Updated",
+    "SUBTITLE": "Last refreshed this month",
+    "DOWNLOAD": "Download CV",
+    "ACCESSIBLE_LABEL": "Download a copy of my resume",
+    "SECONDARY_TEXT": "Prefer a tailored version? Reach out and I can prepare one for your team."
+  },
+  "ABOUT": {
+    "PRETITLE": "About",
+    "TITLE": "Meet the maker behind the pixels",
+    "ROLE": "Frontend engineer & UI enthusiast",
+    "LOCATION": "Based in Podgorica, Montenegro",
+    "INTRO": "Hi, I'm Sućo — a product-oriented developer who blends design sensitivity with robust engineering.",
+    "DESCRIPTIONS": {
+      "P1": "I thrive on transforming complex requirements into delightful, performant interfaces. Angular, TypeScript, and modern CSS are my go-to tools for building scalable systems.",
+      "P2": "Over the past few years I've worked with founders, agencies, and internal teams to prototype ideas, craft component libraries, and optimise existing products.",
+      "P3": "When I'm not coding you can find me exploring UX patterns, contributing to open-source, or sharing what I've learned with the community."
+    },
+    "HIGHLIGHTS": {
+      "EXPERIENCE": {
+        "TITLE": "Product mindset",
+        "DESCRIPTION": "Focus on measurable outcomes, not just deliverables."
+      },
+      "COLLABORATION": {
+        "TITLE": "Collaborative partner",
+        "DESCRIPTION": "Enjoy working closely with designers and backend engineers."
+      },
+      "GROWTH": {
+        "TITLE": "Always improving",
+        "DESCRIPTION": "Invest time into refining processes and learning new tools."
+      }
+    },
+    "CTA": {
+      "TITLE": "Have a project in mind?",
+      "DESCRIPTION": "Let's discuss how we can bring it to life together.",
+      "BUTTON": "Start a conversation"
+    }
+  },
+  "CONTACT": {
+    "PRETITLE": "Let's connect",
+    "TITLE": "Tell me about your project",
+    "DESCRIPTION": "Share a few details about what you're building and I'll get back to you within one business day.",
+    "INFO": {
+      "EMAIL": {
+        "LABEL": "Email",
+        "VALUE": "ferizovicsuco3@gmail.com"
+      },
+      "LOCATION": {
+        "LABEL": "Location",
+        "VALUE": "Podgorica, Montenegro"
+      },
+      "AVAILABILITY": {
+        "LABEL": "Availability",
+        "VALUE": "Open for freelance and remote collaborations"
+      }
+    },
+    "FORM": {
+      "NAME": "Full name",
+      "EMAIL": "Email address",
+      "MESSAGE": "Project details",
+      "PLACEHOLDERS": {
+        "NAME": "How should I address you?",
+        "EMAIL": "your@email.com",
+        "MESSAGE": "Tell me about the challenges you're solving..."
+      }
+    },
+    "BUTTON": "Send message",
+    "STATUS": {
+      "SUCCESS": "Thanks! Your message has been sent. I'll respond soon.",
+      "ERROR": "Please fix the highlighted fields and try again."
+    },
+    "ERRORS": {
+      "NAME_REQUIRED": "Please enter your name.",
+      "NAME_MIN": "Name should be at least {{min}} characters long.",
+      "EMAIL_REQUIRED": "Please enter your email address.",
+      "EMAIL_INVALID": "That doesn't look like a valid email address.",
+      "MESSAGE_REQUIRED": "Please share a short message.",
+      "MESSAGE_MIN": "Message should be at least {{min}} characters long."
+    }
   }
 }
