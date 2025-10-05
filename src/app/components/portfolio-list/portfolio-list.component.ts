@@ -52,7 +52,7 @@ export class PortfolioListComponent {
       titleKey: 'PROJECTS.PORTFOLIO.TITLE',
       descriptionKey: 'PROJECTS.PORTFOLIO.DESCRIPTION',
       image: 'images/ProfileImage.jpg',
-      link: 'https://sucof777-portfolio.vercel.app/',
+      link: '/contact',
       sourceCode: 'https://github.com/Sucof777/myportfolio',
       more: null,
       tags: [
