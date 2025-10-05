@@ -7,9 +7,6 @@ import {
   Validators,
 } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
-import { finalize } from 'rxjs';
-
-import { ContactService } from '../../services/contact.service';
 
 type ContactInfo = {
   icon: 'mail' | 'location' | 'calendar';
@@ -51,10 +48,7 @@ export class ContactComponent {
     },
   ];
 
-  constructor(
-    private readonly formBuilder: FormBuilder,
-    private readonly contactService: ContactService,
-  ) {
+  constructor(private readonly formBuilder: FormBuilder) {
     this.contactForm = this.formBuilder.group({
       name: [
         '',
@@ -98,23 +92,8 @@ export class ContactComponent {
     this.status = null;
     this.submitting = true;
 
-    const { name, email, message } = this.contactForm.getRawValue();
-
-    this.contactService
-      .sendMessage({
-        name,
-        email,
-        message,
-      })
-      .pipe(finalize(() => (this.submitting = false)))
-      .subscribe({
-        next: () => {
-          this.status = 'success';
-          this.contactForm.reset();
-        },
-        error: () => {
-          this.status = 'error';
-        },
-      });
+    this.status = 'success';
+    this.contactForm.reset();
+    this.submitting = false;
   }
 }
