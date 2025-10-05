@@ -1,4 +1,7 @@
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import {
+  HttpClientTestingModule,
+  HttpTestingController,
+} from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 
 import { ContactService } from './contact.service';
@@ -22,7 +25,11 @@ describe('ContactService', () => {
 
   it('should POST contact payload to /api/contact', () => {
     service
-      .sendMessage({ name: 'Test', email: 'test@example.com', message: 'Hello world' })
+      .sendMessage({
+        name: 'Test',
+        email: 'test@example.com',
+        message: 'Hello world',
+      })
       .subscribe();
 
     const request = httpMock.expectOne('/api/contact');
@@ -35,3 +42,4 @@ describe('ContactService', () => {
     request.flush({});
   });
 });
+// aa
