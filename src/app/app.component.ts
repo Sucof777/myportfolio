@@ -37,6 +37,7 @@ export class AppComponent {
     { path: '/portfolio', label: 'NAV.LINKS.HOME', exact: true },
     { path: '/about', label: 'NAV.LINKS.ABOUT' },
     { path: '/contact', label: 'NAV.LINKS.CONTACT' },
+    { path: '/admin', label: 'NAV.LINKS.ADMIN' },
   ];
 
   readonly socialLinks: readonly SocialLink[] = [
@@ -47,7 +48,7 @@ export class AppComponent {
     },
     {
       icon: 'linkedin',
-      href: 'https://linkedin.com/in/username',
+      href: 'https://www.linkedin.com/in/sucoferizovic/',
       label: 'FOOTER.SOCIAL.LINKEDIN',
     },
     {

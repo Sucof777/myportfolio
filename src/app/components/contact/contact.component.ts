@@ -7,6 +7,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
+import { ContactMessagesService } from '../../services/contact-messages.service';
 
 type ContactInfo = {
   icon: 'mail' | 'location' | 'calendar';
@@ -27,6 +28,7 @@ export class ContactComponent {
   readonly messageMinLength = 20;
   readonly contactForm: FormGroup;
   status: 'success' | 'error' | null = null;
+  submitting = false;
 
   readonly contactInfo: readonly ContactInfo[] = [
     {
@@ -47,11 +49,18 @@ export class ContactComponent {
     },
   ];
 
-  constructor(private readonly formBuilder: FormBuilder) {
+  constructor(private readonly formBuilder: FormBuilder,
+              private readonly contactMessagesService: ContactMessagesService,) {
     this.contactForm = this.formBuilder.group({
-      name: ['', [Validators.required, Validators.minLength(this.nameMinLength)]],
+      name: [
+        '',
+        [Validators.required, Validators.minLength(this.nameMinLength)],
+      ],
       email: ['', [Validators.required, Validators.email]],
-      message: ['', [Validators.required, Validators.minLength(this.messageMinLength)]],
+      message: [
+        '',
+        [Validators.required, Validators.minLength(this.messageMinLength)],
+      ],
     });
   }
 
@@ -72,13 +81,29 @@ export class ContactComponent {
   }
 
   onSubmit(): void {
+    if (this.submitting) {
+      return;
+    }
+
     if (this.contactForm.invalid) {
       this.status = 'error';
       this.contactForm.markAllAsTouched();
       return;
     }
 
+    this.status = null;
+    this.submitting = true;
+
+    const { name, email, message } = this.contactForm.value;
+
+    this.contactMessagesService.addMessage({
+      name: name ?? '',
+      email: email ?? '',
+      message: message ?? '',
+    });
+
     this.status = 'success';
     this.contactForm.reset();
+    this.submitting = false;
   }
 }

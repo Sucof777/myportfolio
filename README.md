@@ -4,13 +4,13 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 
 ## Development server
 
-To start a local development server, run:
+Run the Angular development server with:
 
 ```bash
-ng serve
+npm start
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+This command launches the Angular CLI dev server on `http://localhost:4200` and rebuilds the application whenever source files change.
 
 ## Code scaffolding
 
@@ -36,6 +36,10 @@ ng build
 
 This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
 
+## Production deployment
+
+Run `npm run build` to generate the optimized production assets. The build output is written to `dist/portfolio` and can be deployed to any static or server-rendered hosting environment that supports Angular's SSR bundle.
+
 ## Running unit tests
 
 To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
@@ -43,6 +47,8 @@ To execute unit tests with the [Karma](https://karma-runner.github.io) test runn
 ```bash
 ng test
 ```
+
+Server-side API tests have been removed. Only the Angular unit tests remain, which you can run with `npm test`.
 
 ## Running end-to-end tests
 
