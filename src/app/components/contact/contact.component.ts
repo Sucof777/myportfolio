@@ -49,10 +49,8 @@ export class ContactComponent {
     },
   ];
 
-  constructor(
-    private readonly formBuilder: FormBuilder,
-    private readonly contactMessagesService: ContactMessagesService,
-  ) {
+  constructor(private readonly formBuilder: FormBuilder,
+              private readonly contactMessagesService: ContactMessagesService,) {
     this.contactForm = this.formBuilder.group({
       name: [
         '',
