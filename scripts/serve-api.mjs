@@ -9,10 +9,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const projectRoot = resolve(__dirname, '..');
 
-const tscExecutable = resolve(
-  projectRoot,
-  'node_modules/.bin/tsc' + (process.platform === 'win32' ? '.cmd' : ''),
-);
+const tscJsPath = resolve(projectRoot, 'node_modules/typescript/lib/tsc.js');
 const tsconfigPath = resolve(projectRoot, 'tsconfig.server-test.json');
 const runtimeEntry = resolve(__dirname, 'start-compiled-api.mjs');
 const tmpPackageJsonPath = resolve(projectRoot, '.tmp/server-tests/package.json');
@@ -79,8 +76,8 @@ function requestServerRestart() {
 }
 
 const tscProcess = spawn(
-  tscExecutable,
-  ['--project', tsconfigPath, '--watch', '--preserveWatchOutput'],
+  process.execPath,
+  [tscJsPath, '--project', tsconfigPath, '--watch', '--preserveWatchOutput'],
   {
     cwd: projectRoot,
     stdio: ['ignore', 'pipe', 'pipe'],
