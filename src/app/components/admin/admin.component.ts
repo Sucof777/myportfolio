@@ -6,6 +6,7 @@ import {
   ContactMessage,
   ContactMessagesService,
 } from '../../services/contact-messages.service';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-admin',
@@ -16,9 +17,14 @@ import {
 })
 export class AdminComponent {
   private readonly contactMessagesService = inject(ContactMessagesService);
+  private readonly authService = inject(AuthService);
   readonly messages$ = this.contactMessagesService.messages$;
 
   trackByMessage(_: number, message: ContactMessage): number {
     return message.id;
+  }
+
+  logout(): void {
+    this.authService.logout();
   }
 }

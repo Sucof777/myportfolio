@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { AdminComponent } from './admin.component';
 import { ContactMessagesService } from '../../services/contact-messages.service';
@@ -11,7 +12,7 @@ describe('AdminComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AdminComponent],
+      imports: [AdminComponent, RouterTestingModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(AdminComponent);

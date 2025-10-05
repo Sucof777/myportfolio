@@ -1,0 +1,8 @@
+:host {
+  display: block;
+  padding: 4rem 1.5rem;
+}
+
+form.ng-invalid.ng-touched input {
+  border-color: rgba(244, 63, 94, 0.7);
+}

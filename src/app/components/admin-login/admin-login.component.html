@@ -1,0 +1,89 @@
+<section
+  class="relative isolate flex min-h-[60vh] items-center justify-center overflow-hidden rounded-3xl border border-slate-200/70 bg-gradient-to-br from-white via-white to-slate-50 px-6 py-16 shadow-xl shadow-slate-900/5 backdrop-blur dark:border-slate-800/60 dark:from-slate-950 dark:via-slate-950 dark:to-slate-900"
+  aria-labelledby="admin-login-title"
+>
+  <div class="pointer-events-none absolute -top-32 left-1/2 h-80 w-80 -translate-x-1/2 rounded-full bg-blue-500/10 blur-3xl"></div>
+  <div class="pointer-events-none absolute -bottom-24 right-16 h-72 w-72 rounded-full bg-purple-500/10 blur-3xl"></div>
+
+  <div class="relative z-10 w-full max-w-md space-y-8">
+    <header class="space-y-3 text-center">
+      <p class="text-sm font-semibold uppercase tracking-[0.45em] text-blue-500">
+        {{ 'ADMIN_LOGIN.PRETITLE' | translate }}
+      </p>
+      <h1 id="admin-login-title" class="text-3xl font-extrabold text-slate-900 dark:text-white">
+        {{ 'ADMIN_LOGIN.TITLE' | translate }}
+      </h1>
+      <p class="text-base leading-relaxed text-slate-600 dark:text-slate-300">
+        {{ 'ADMIN_LOGIN.DESCRIPTION' | translate }}
+      </p>
+    </header>
+
+    <form
+      class="space-y-6 rounded-3xl border border-slate-200/70 bg-white/90 p-8 shadow-lg dark:border-slate-800/60 dark:bg-slate-900/70"
+      [formGroup]="loginForm"
+      (ngSubmit)="onSubmit()"
+      novalidate
+    >
+      <div class="space-y-2">
+        <label class="block text-sm font-medium text-slate-700 dark:text-slate-300" for="username">
+          {{ 'ADMIN_LOGIN.USERNAME.LABEL' | translate }}
+        </label>
+        <input
+          id="username"
+          type="text"
+          formControlName="username"
+          class="w-full rounded-xl border border-slate-300/70 bg-white/80 px-4 py-3 text-base text-slate-900 shadow-sm transition focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-blue-500/20 dark:border-slate-700/60 dark:bg-slate-900/80 dark:text-white"
+          [attr.aria-invalid]="usernameControl?.invalid && usernameControl?.touched"
+          autocomplete="username"
+        />
+        <p
+          *ngIf="usernameControl?.invalid && usernameControl?.touched"
+          class="text-sm text-rose-500"
+        >
+          {{ 'ADMIN_LOGIN.USERNAME.ERROR' | translate }}
+        </p>
+      </div>
+
+      <div class="space-y-2">
+        <label class="block text-sm font-medium text-slate-700 dark:text-slate-300" for="password">
+          {{ 'ADMIN_LOGIN.PASSWORD.LABEL' | translate }}
+        </label>
+        <input
+          id="password"
+          type="password"
+          formControlName="password"
+          class="w-full rounded-xl border border-slate-300/70 bg-white/80 px-4 py-3 text-base text-slate-900 shadow-sm transition focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-blue-500/20 dark:border-slate-700/60 dark:bg-slate-900/80 dark:text-white"
+          [attr.aria-invalid]="passwordControl?.invalid && passwordControl?.touched"
+          autocomplete="current-password"
+        />
+        <p
+          *ngIf="passwordControl?.invalid && passwordControl?.touched"
+          class="text-sm text-rose-500"
+        >
+          {{ 'ADMIN_LOGIN.PASSWORD.ERROR' | translate }}
+        </p>
+      </div>
+
+      <p *ngIf="error" class="rounded-xl bg-rose-500/10 px-4 py-3 text-sm text-rose-600 dark:text-rose-400">
+        {{ 'ADMIN_LOGIN.ERROR' | translate }}
+      </p>
+
+      <button
+        type="submit"
+        class="w-full rounded-xl bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-500 px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-white shadow-lg transition hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-blue-500/30 disabled:cursor-not-allowed disabled:opacity-70"
+        [disabled]="submitting"
+      >
+        <span *ngIf="!submitting; else loading">{{ 'ADMIN_LOGIN.SUBMIT' | translate }}</span>
+        <ng-template #loading>
+          <span class="flex items-center justify-center gap-2">
+            <svg class="h-5 w-5 animate-spin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"></circle>
+              <path class="opacity-75" d="M4 12a8 8 0 018-8" stroke="currentColor" stroke-linecap="round"></path>
+            </svg>
+            {{ 'ADMIN_LOGIN.SUBMITTING' | translate }}
+          </span>
+        </ng-template>
+      </button>
+    </form>
+  </div>
+</section>
