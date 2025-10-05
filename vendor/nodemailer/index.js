@@ -1,5 +1,5 @@
-import net from 'node:net';
-import tls from 'node:tls';
+import net from "node:net";
+import tls from "node:tls";
 
 const toArray = (value) => {
   if (Array.isArray(value)) {
@@ -13,15 +13,12 @@ const toArray = (value) => {
   return [value];
 };
 
-const base64 = (value) => Buffer.from(value, 'utf8').toString('base64');
+const base64 = (value) => Buffer.from(value, "utf8").toString("base64");
 
-const normalizeLines = (text = '') =>
-  text
-    .replace(/\r\n/g, '\n')
-    .replace(/\r/g, '\n')
-    .replace(/\n/g, '\r\n');
+const normalizeLines = (text = "") =>
+  text.replace(/\r\n/g, "\n").replace(/\r/g, "\n").replace(/\n/g, "\r\n");
 
-const escapeLeadingPeriods = (text) => text.replace(/^\./gm, '..');
+const escapeLeadingPeriods = (text) => text.replace(/^\./gm, "..");
 
 const createSMTPConnection = (options) =>
   new Promise((resolve, reject) => {
@@ -31,7 +28,7 @@ const createSMTPConnection = (options) =>
 
     const pending = [];
     const queuedResponses = [];
-    let buffer = '';
+    let buffer = "";
     let currentLines = [];
     let closed = false;
 
@@ -42,7 +39,7 @@ const createSMTPConnection = (options) =>
         if (expect && !expect.includes(response.code)) {
           rejectEntry(
             new Error(
-              `Unexpected SMTP response ${response.code}: ${response.lines.join(' ')}`,
+              `Unexpected SMTP response ${response.code}: ${response.lines.join(" ")}`,
             ),
           );
         } else {
@@ -64,7 +61,7 @@ const createSMTPConnection = (options) =>
         if (expect && !expect.includes(response.code)) {
           rejectEntry(
             new Error(
-              `Unexpected SMTP response ${response.code}: ${response.lines.join(' ')}`,
+              `Unexpected SMTP response ${response.code}: ${response.lines.join(" ")}`,
             ),
           );
         } else {
@@ -75,7 +72,7 @@ const createSMTPConnection = (options) =>
 
     const processBuffer = () => {
       while (true) {
-        const index = buffer.indexOf('\r\n');
+        const index = buffer.indexOf("\r\n");
         if (index < 0) {
           break;
         }
@@ -92,7 +89,7 @@ const createSMTPConnection = (options) =>
         }
 
         const code = Number.parseInt(match[1], 10);
-        const continuation = match[2] === '-';
+        const continuation = match[2] === "-";
         const message = match[3];
         currentLines.push(message.trim());
 
@@ -108,18 +105,22 @@ const createSMTPConnection = (options) =>
     const sendCommand = (command, expectCodes) =>
       new Promise((resolveCommand, rejectCommand) => {
         if (closed) {
-          rejectCommand(new Error('Connection already closed'));
+          rejectCommand(new Error("Connection already closed"));
           return;
         }
 
         const expectArray =
-          typeof expectCodes === 'number'
+          typeof expectCodes === "number"
             ? [expectCodes]
             : Array.isArray(expectCodes)
               ? expectCodes
               : undefined;
 
-        pending.push({ resolve: resolveCommand, reject: rejectCommand, expect: expectArray });
+        pending.push({
+          resolve: resolveCommand,
+          reject: rejectCommand,
+          expect: expectArray,
+        });
 
         if (command !== undefined) {
           socket.write(`${command}\r\n`);
@@ -128,12 +129,12 @@ const createSMTPConnection = (options) =>
         processBuffer();
       });
 
-    socket.on('data', (chunk) => {
-      buffer += chunk.toString('utf8');
+    socket.on("data", (chunk) => {
+      buffer += chunk.toString("utf8");
       processBuffer();
     });
 
-    socket.once('error', (error) => {
+    socket.once("error", (error) => {
       if (!closed) {
         closed = true;
         reject(error);
@@ -143,10 +144,10 @@ const createSMTPConnection = (options) =>
       }
     });
 
-    socket.once('close', () => {
+    socket.once("close", () => {
       closed = true;
       while (pending.length) {
-        pending.shift()?.reject(new Error('Connection closed'));
+        pending.shift()?.reject(new Error("Connection closed"));
       }
     });
 
@@ -157,31 +158,31 @@ const createSMTPConnection = (options) =>
           return;
         }
 
-        socket.once('close', resolveClose);
+        socket.once("close", resolveClose);
         socket.end();
       });
 
-    socket.once('connect', () => {
+    socket.once("connect", () => {
       resolve({ sendCommand, close, socket });
     });
   });
 
 const buildMessage = ({ from, to, subject, text, replyTo }) => {
-  const recipients = toArray(to).join(', ');
+  const recipients = toArray(to).join(", ");
   const headers = [
     `From: ${from}`,
     `To: ${recipients}`,
     `Subject: ${subject}`,
     replyTo ? `Reply-To: ${replyTo}` : null,
     `Date: ${new Date().toUTCString()}`,
-    'MIME-Version: 1.0',
-    'Content-Type: text/plain; charset=UTF-8',
-    'Content-Transfer-Encoding: 8bit',
+    "MIME-Version: 1.0",
+    "Content-Type: text/plain; charset=UTF-8",
+    "Content-Transfer-Encoding: 8bit",
   ].filter(Boolean);
 
   const normalizedText = escapeLeadingPeriods(normalizeLines(text));
 
-  return `${headers.join('\r\n')}\r\n\r\n${normalizedText}`;
+  return `${headers.join("\r\n")}\r\n\r\n${normalizedText}`;
 };
 
 export const createTransport = (options = {}) => {
@@ -201,7 +202,7 @@ export const createTransport = (options = {}) => {
   }
 
   if (!options.host) {
-    throw new Error('SMTP host is required');
+    throw new Error("SMTP host is required");
   }
 
   return {
@@ -210,10 +211,13 @@ export const createTransport = (options = {}) => {
 
       try {
         await connection.sendCommand(undefined, 220);
-        await connection.sendCommand(`EHLO ${options.name ?? 'localhost'}`, 250);
+        await connection.sendCommand(
+          `EHLO ${options.name ?? "localhost"}`,
+          250,
+        );
 
         if (options.auth?.user && options.auth?.pass) {
-          await connection.sendCommand('AUTH LOGIN', 334);
+          await connection.sendCommand("AUTH LOGIN", 334);
           await connection.sendCommand(base64(options.auth.user), 334);
           await connection.sendCommand(base64(options.auth.pass), 235);
         }
@@ -226,10 +230,10 @@ export const createTransport = (options = {}) => {
           await connection.sendCommand(`RCPT TO:<${recipient}>`, 250);
         }
 
-        await connection.sendCommand('DATA', 354);
+        await connection.sendCommand("DATA", 354);
         connection.socket.write(`${buildMessage(mailOptions)}\r\n.\r\n`);
         await connection.sendCommand(undefined, 250);
-        await connection.sendCommand('QUIT', 221);
+        await connection.sendCommand("QUIT", 221);
       } finally {
         await connection.close();
       }
