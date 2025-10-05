@@ -1,23 +1,29 @@
+const { join } = require('node:path');
+const { pathToFileURL } = require('node:url');
+
 let cachedHandler = null;
+
+const handlerModuleUrl = pathToFileURL(
+  join(__dirname, '../dist/portfolio/server/server.mjs'),
+).href;
 
 async function loadHandler() {
   if (!cachedHandler) {
-    const module = await import('../dist/portfolio/server/server.mjs');
+    const module = await import(handlerModuleUrl);
 
-    if (!module || !('app' in module)) {
+    const app = module && (module.app || module.default);
+
+    if (typeof app !== 'function') {
       throw new Error('The Express application failed to build.');
     }
 
-    cachedHandler = module.app;
+    cachedHandler = app;
   }
 
   return cachedHandler;
 }
 
-async function handler(req, res) {
+module.exports = async function handler(req, res) {
   const app = await loadHandler();
-
-  await app(req, res);
-}
-
-module.exports = handler;
+  return app(req, res);
+};
