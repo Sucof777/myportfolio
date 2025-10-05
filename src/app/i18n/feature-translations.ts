@@ -12,6 +12,7 @@ export const featureTranslationsEn = {
       HOME: 'Portfolio',
       ABOUT: 'About',
       CONTACT: 'Contact',
+      ADMIN: 'Admin panel',
     },
   },
   FOOTER: {
@@ -225,6 +226,16 @@ export const featureTranslationsEn = {
     },
     BUTTON: 'Send message',
   },
+  ADMIN: {
+    PRETITLE: 'Admin',
+    TITLE: 'Contact form inbox',
+    DESCRIPTION:
+      'Review each submission that comes in through the portfolio contact form in real time.',
+    EMPTY: 'No messages yet. Submit the contact form to see them listed here.',
+    MESSAGE: {
+      RECEIVED_AT: 'Received',
+    },
+  },
 } as const;
 
 export const featureTranslationsSr = {
@@ -241,6 +252,7 @@ export const featureTranslationsSr = {
       HOME: 'Portfolio',
       ABOUT: 'O meni',
       CONTACT: 'Kontakt',
+      ADMIN: 'Admin panel',
     },
   },
   FOOTER: {
@@ -453,5 +465,14 @@ export const featureTranslationsSr = {
       MESSAGE_MIN: 'Poruka treba da ima najmanje {{ min }} karaktera.',
     },
     BUTTON: 'Pošalji poruku',
+  },
+  ADMIN: {
+    PRETITLE: 'Admin panel',
+    TITLE: 'Sandučić poruka',
+    DESCRIPTION: 'Pregledaj poruke poslate preko kontakt forme u realnom vremenu.',
+    EMPTY: 'Još nema poruka. Pošalji formu da bi se pojavile ovdje.',
+    MESSAGE: {
+      RECEIVED_AT: 'Primljeno',
+    },
   },
 } as const;

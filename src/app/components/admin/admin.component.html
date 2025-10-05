@@ -1,0 +1,80 @@
+<section
+  class="relative isolate overflow-hidden rounded-3xl border border-slate-200/70 bg-gradient-to-br from-white via-white to-slate-50 px-6 py-16 shadow-xl shadow-slate-900/5 backdrop-blur dark:border-slate-800/60 dark:from-slate-950 dark:via-slate-950 dark:to-slate-900"
+  aria-labelledby="admin-title"
+>
+  <div
+    class="pointer-events-none absolute -top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-purple-500/20 blur-3xl"
+  ></div>
+  <div
+    class="pointer-events-none absolute -bottom-16 right-16 h-60 w-60 rounded-full bg-blue-500/10 blur-3xl"
+  ></div>
+
+  <div class="relative mx-auto max-w-5xl space-y-12">
+    <header class="space-y-4 text-center">
+      <p class="text-sm font-semibold uppercase tracking-[0.45em] text-blue-500">
+        {{ 'ADMIN.PRETITLE' | translate }}
+      </p>
+      <h1 id="admin-title" class="text-3xl font-extrabold text-slate-900 dark:text-white">
+        {{ 'ADMIN.TITLE' | translate }}
+      </h1>
+      <p class="text-base leading-relaxed text-slate-600 dark:text-slate-300">
+        {{ 'ADMIN.DESCRIPTION' | translate }}
+      </p>
+    </header>
+
+    <ng-container *ngIf="messages$ | async as messages">
+      <div *ngIf="messages.length; else emptyState" class="space-y-6">
+        <article
+          *ngFor="let message of messages; trackBy: trackByMessage"
+          class="rounded-3xl border border-slate-200/80 bg-white/90 p-6 shadow-lg dark:border-slate-700/70 dark:bg-slate-900/70"
+        >
+          <div class="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+            <div class="space-y-2">
+              <p
+                class="text-xs font-semibold uppercase tracking-[0.35em] text-slate-400 dark:text-slate-500"
+                data-testid="message-received"
+              >
+                {{ 'ADMIN.MESSAGE.RECEIVED_AT' | translate }}
+                <span class="ml-2 text-slate-600 dark:text-slate-300">
+                  {{ message.createdAt | date: 'medium' }}
+                </span>
+              </p>
+              <h2 class="text-xl font-bold text-slate-900 dark:text-white" data-testid="message-name">
+                {{ message.name }}
+              </h2>
+              <a
+                class="inline-flex items-center gap-2 text-sm font-medium text-blue-600 underline decoration-dotted underline-offset-4 transition hover:text-blue-500 dark:text-blue-300 dark:hover:text-blue-200"
+                [href]="'mailto:' + message.email"
+                data-testid="message-email"
+              >
+                {{ message.email }}
+              </a>
+            </div>
+            <span
+              class="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-500 text-white shadow"
+              aria-hidden="true"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="h-6 w-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m21.75 7.5-9.45 5.67a1.5 1.5 0 0 1-1.5 0L1.35 7.5" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 6H3a1.5 1.5 0 0 0-1.5 1.5v9A1.5 1.5 0 0 0 3 18h18a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 21 6Z" />
+              </svg>
+            </span>
+          </div>
+          <p class="mt-6 whitespace-pre-line text-base leading-relaxed text-slate-700 dark:text-slate-200" data-testid="message-body">
+            {{ message.message }}
+          </p>
+        </article>
+      </div>
+      <ng-template #emptyState>
+        <div
+          class="rounded-3xl border border-dashed border-slate-300/70 bg-white/60 p-12 text-center dark:border-slate-700/60 dark:bg-slate-900/60"
+          data-testid="empty-state"
+        >
+          <p class="text-base font-medium text-slate-600 dark:text-slate-300">
+            {{ 'ADMIN.EMPTY' | translate }}
+          </p>
+        </div>
+      </ng-template>
+    </ng-container>
+  </div>
+</section>

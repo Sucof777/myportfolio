@@ -1,10 +1,12 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ContactComponent } from './contact.component';
+import { ContactMessagesService } from '../../services/contact-messages.service';
 
 describe('ContactComponent', () => {
   let component: ContactComponent;
   let fixture: ComponentFixture<ContactComponent>;
+  let contactMessagesService: ContactMessagesService;
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [ContactComponent],
@@ -12,6 +14,8 @@ describe('ContactComponent', () => {
 
     fixture = TestBed.createComponent(ContactComponent);
     component = fixture.componentInstance;
+    contactMessagesService = TestBed.inject(ContactMessagesService);
+    spyOn(contactMessagesService, 'addMessage').and.callThrough();
     fixture.detectChanges();
   });
 

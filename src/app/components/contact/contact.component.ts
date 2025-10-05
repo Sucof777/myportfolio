@@ -7,6 +7,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
+import { ContactMessagesService } from '../../services/contact-messages.service';
 
 type ContactInfo = {
   icon: 'mail' | 'location' | 'calendar';
@@ -48,7 +49,8 @@ export class ContactComponent {
     },
   ];
 
-  constructor(private readonly formBuilder: FormBuilder) {
+  constructor(private readonly formBuilder: FormBuilder,
+              private readonly contactMessagesService: ContactMessagesService,) {
     this.contactForm = this.formBuilder.group({
       name: [
         '',
@@ -91,6 +93,14 @@ export class ContactComponent {
 
     this.status = null;
     this.submitting = true;
+
+    const { name, email, message } = this.contactForm.value;
+
+    this.contactMessagesService.addMessage({
+      name: name ?? '',
+      email: email ?? '',
+      message: message ?? '',
+    });
 
     this.status = 'success';
     this.contactForm.reset();
