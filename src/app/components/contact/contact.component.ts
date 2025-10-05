@@ -56,9 +56,15 @@ export class ContactComponent {
     private readonly contactService: ContactService,
   ) {
     this.contactForm = this.formBuilder.group({
-      name: ['', [Validators.required, Validators.minLength(this.nameMinLength)]],
+      name: [
+        '',
+        [Validators.required, Validators.minLength(this.nameMinLength)],
+      ],
       email: ['', [Validators.required, Validators.email]],
-      message: ['', [Validators.required, Validators.minLength(this.messageMinLength)]],
+      message: [
+        '',
+        [Validators.required, Validators.minLength(this.messageMinLength)],
+      ],
     });
   }
 

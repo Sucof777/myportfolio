@@ -33,7 +33,8 @@ const buildTransporter = () => {
   }
 
   const parsedPort = port ? Number.parseInt(port, 10) : 587;
-  const secure = process.env['CONTACT_SMTP_SECURE'] === 'true' || parsedPort === 465;
+  const secure =
+    process.env['CONTACT_SMTP_SECURE'] === 'true' || parsedPort === 465;
 
   return nodemailer.createTransport({
     host,
@@ -53,19 +54,28 @@ app.post('/api/contact', async (req, res) => {
   const body = req.body as ContactRequestBody;
   const { name, email, message } = body ?? {};
 
-  if (!isNonEmptyString(name, 3) || !isNonEmptyString(email) || !isNonEmptyString(message, 20)) {
+  if (
+    !isNonEmptyString(name, 3) ||
+    !isNonEmptyString(email) ||
+    !isNonEmptyString(message, 20)
+  ) {
     return res.status(400).json({ error: 'Invalid contact payload.' });
   }
 
   const transporter = buildTransporter();
 
   if (!transporter) {
-    return res.status(500).json({ error: 'Email transport is not configured.' });
+    return res
+      .status(500)
+      .json({ error: 'Email transport is not configured.' });
   }
 
-  const recipient = process.env['CONTACT_RECIPIENT'] ?? 'ferizovicsuco3@gmail.com';
+  const recipient =
+    process.env['CONTACT_RECIPIENT'] ?? 'ferizovicsuco3@gmail.com';
   const fromAddress =
-    process.env['CONTACT_FROM_ADDRESS'] ?? process.env['CONTACT_SMTP_USER'] ?? email;
+    process.env['CONTACT_FROM_ADDRESS'] ??
+    process.env['CONTACT_SMTP_USER'] ??
+    email;
 
   try {
     await transporter.sendMail({
@@ -140,7 +150,8 @@ if (shouldEnableAngular) {
     res.status(501).send('SSR is disabled.');
   });
 
-  const fallbackHandler: express.RequestHandler = (req, res, next) => app(req, res, next);
+  const fallbackHandler: express.RequestHandler = (req, res, next) =>
+    app(req, res, next);
   reqHandler = fallbackHandler;
 }
 
