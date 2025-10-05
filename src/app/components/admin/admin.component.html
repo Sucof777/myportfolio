@@ -10,16 +10,30 @@
   ></div>
 
   <div class="relative mx-auto max-w-5xl space-y-12">
-    <header class="space-y-4 text-center">
-      <p class="text-sm font-semibold uppercase tracking-[0.45em] text-blue-500">
-        {{ 'ADMIN.PRETITLE' | translate }}
-      </p>
-      <h1 id="admin-title" class="text-3xl font-extrabold text-slate-900 dark:text-white">
-        {{ 'ADMIN.TITLE' | translate }}
-      </h1>
-      <p class="text-base leading-relaxed text-slate-600 dark:text-slate-300">
-        {{ 'ADMIN.DESCRIPTION' | translate }}
-      </p>
+    <header class="flex flex-col items-center gap-4 text-center md:flex-row md:items-start md:justify-between md:text-left">
+      <div class="space-y-4">
+        <p class="text-sm font-semibold uppercase tracking-[0.45em] text-blue-500">
+          {{ 'ADMIN.PRETITLE' | translate }}
+        </p>
+        <h1 id="admin-title" class="text-3xl font-extrabold text-slate-900 dark:text-white">
+          {{ 'ADMIN.TITLE' | translate }}
+        </h1>
+        <p class="text-base leading-relaxed text-slate-600 dark:text-slate-300">
+          {{ 'ADMIN.DESCRIPTION' | translate }}
+        </p>
+      </div>
+
+      <button
+        type="button"
+        class="inline-flex items-center justify-center gap-2 rounded-full border border-slate-300/80 bg-white/80 px-5 py-2 text-sm font-medium text-slate-700 shadow-sm transition hover:border-transparent hover:bg-slate-900 hover:text-white focus:outline-none focus:ring-4 focus:ring-blue-500/20 dark:border-slate-700/70 dark:bg-slate-900/80 dark:text-slate-200 dark:hover:bg-slate-800"
+        (click)="logout()"
+      >
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6A2.25 2.25 0 0 0 5.25 5.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 9l3-3m0 0 3 3m-3-3v12" />
+        </svg>
+        {{ 'ADMIN.LOGOUT' | translate }}
+      </button>
     </header>
 
     <ng-container *ngIf="messages$ | async as messages">

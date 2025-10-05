@@ -235,6 +235,23 @@ export const featureTranslationsEn = {
     MESSAGE: {
       RECEIVED_AT: 'Received',
     },
+    LOGOUT: 'Log out',
+  },
+  ADMIN_LOGIN: {
+    PRETITLE: 'Restricted area',
+    TITLE: 'Admin sign in',
+    DESCRIPTION: 'Enter your administrator credentials to access incoming contact messages.',
+    USERNAME: {
+      LABEL: 'Username',
+      ERROR: 'Username is required.',
+    },
+    PASSWORD: {
+      LABEL: 'Password',
+      ERROR: 'Password is required.',
+    },
+    SUBMIT: 'Sign in',
+    SUBMITTING: 'Signing in...',
+    ERROR: 'Incorrect credentials. Please try again.',
   },
 } as const;
 
@@ -474,5 +491,22 @@ export const featureTranslationsSr = {
     MESSAGE: {
       RECEIVED_AT: 'Primljeno',
     },
+    LOGOUT: 'Odjavi se',
+  },
+  ADMIN_LOGIN: {
+    PRETITLE: 'Ograničen pristup',
+    TITLE: 'Prijava za admina',
+    DESCRIPTION: 'Unesite administratorske podatke kako biste pristupili pristiglim porukama.',
+    USERNAME: {
+      LABEL: 'Korisničko ime',
+      ERROR: 'Korisničko ime je obavezno.',
+    },
+    PASSWORD: {
+      LABEL: 'Lozinka',
+      ERROR: 'Lozinka je obavezna.',
+    },
+    SUBMIT: 'Prijavi se',
+    SUBMITTING: 'Prijavljivanje...',
+    ERROR: 'Pogrešni podaci. Pokušajte ponovo.',
   },
 } as const;
