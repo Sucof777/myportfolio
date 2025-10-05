@@ -48,7 +48,7 @@ export class AppComponent {
     },
     {
       icon: 'linkedin',
-      href: 'https://linkedin.com/in/username',
+      href: 'https://www.linkedin.com/in/sucoferizovic/',
       label: 'FOOTER.SOCIAL.LINKEDIN',
     },
     {

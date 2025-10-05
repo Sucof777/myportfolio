@@ -34,6 +34,11 @@ describe('ContactComponent', () => {
 
     expect(component.status).toBe('success');
     expect(component.submitting).toBeFalse();
+    expect(contactMessagesService.addMessage).toHaveBeenCalledWith({
+      name: 'John Doe',
+      email: 'john@example.com',
+      message: 'Hello there, this message is long enough.',
+    });
     expect(component.contactForm.value).toEqual({
       name: null,
       email: null,
